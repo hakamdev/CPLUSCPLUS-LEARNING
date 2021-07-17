@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 16:53:39 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/17 17:13:49 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/17 17:59:11 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ Hakam::Hakam( void ) {
 }
 Hakam::Hakam( int age, std::string name, std::string id )
 			: age(age), name(name), id(id) {
-	output("Custom Constructor Called!");
+	output("Custom Constructor Called!" + std::string(" | ") + getName());
 }
 Hakam::~Hakam( void ) {
-	output("Destructor Called!");
+	output("Destructor Called!" + std::string(" | ") + getName());
 }
 
 void		Hakam::setAge( int age ) {

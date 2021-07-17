@@ -6,18 +6,19 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 17:08:18 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/17 17:16:10 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/17 17:53:10 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Hakam.hpp"
 
 int		main( void ) {
-	Hakam h1(12, "Hakam", "Y123456");
-	Hakam h2;
-	Hakam *h3 = new Hakam();
+	//Hakam h1(12, "Hakam", "Y123456");
+	// Hakam h2;
+	// Hakam *h3 = new Hakam();
 	Hakam *h4 = new Hakam(40, "Hakam 4", "Y123456");
 
-	delete h3;
+	//delete h1;
 	delete h4;
+	return (0);
 }
