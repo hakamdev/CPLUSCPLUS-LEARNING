@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 16:53:39 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/17 17:59:11 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/17 20:28:47 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ void		Hakam::setId( std::string id ) {
 	this->id = id;
 }
 
-int			Hakam::getAge( void ) {
+int			Hakam::getAge( void ) const {
 	return (this->age);
 }
-std::string	Hakam::getName( void ) {
+std::string	Hakam::getName( void ) const {
 	return (this->name);
 }
-std::string	Hakam::getId( void ) {
+std::string	Hakam::getId( void ) const {
 	return (this->id);
 }

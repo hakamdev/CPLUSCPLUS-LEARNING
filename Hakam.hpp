@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 16:40:37 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/17 16:53:23 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/17 20:28:25 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class Hakam {
 
 	public:
 		/*		Getters		*/
-		int			getAge( void );
-		std::string	getName( void );
-		std::string	getId( void );
+		int			getAge( void ) const;
+		std::string	getName( void ) const;
+		std::string	getId( void ) const;
 		/*		Setters		*/
 		void		setAge( int age );
 		void		setName( std::string name );
