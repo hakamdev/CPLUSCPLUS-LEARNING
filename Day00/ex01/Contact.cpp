@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 19:36:42 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/18 19:42:20 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/18 20:23:08 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,25 @@ String Contact::getDarkestSecret() {
 }
 
 /* setters */
+void Contact::setFirstName( String firstName ) {
+	this->firstName = firstName;
+}
 
+void Contact::setLastName( String lastName ) {
+	this->lastName = lastName;
+}
+
+void Contact::setNickname( String nickname ) {
+	this->nickname = nickname;
+}
+
+void Contact::setPhoneNumber( String phoneNumber ) {
+	this->phoneNumber = phoneNumber;
+}
+
+void Contact::setDarkestSecret( String darkestSecret ) {
+	this->darkestSecret;
+}
 
 
 
