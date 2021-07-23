@@ -42,6 +42,10 @@ String Contact::getFirstName() {
 	return (this->firstName);
 }
 
+String Contact::getLastName() {
+	return (this->lastName);
+}
+
 String Contact::getNickname() {
 	return (this->lastName);
 }
