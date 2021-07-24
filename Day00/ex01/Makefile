@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
+#    By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/18 18:31:37 by ehakam            #+#    #+#              #
-#    Updated: 2021/07/18 18:31:40 by ehakam           ###   ########.fr        #
+#    Updated: 2021/07/24 18:46:16 by hakamgo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror
-NAME	=	megaphone
-SRCS	=	megaphone.cpp
+NAME	=	phonebook
+SRCS	=	Contact.cpp Phonebook.cpp program.cpp
 
 all: $(NAME)
 

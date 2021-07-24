@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 19:36:42 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/18 20:23:08 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/24 18:48:24 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void Contact::setPhoneNumber( String phoneNumber ) {
 }
 
 void Contact::setDarkestSecret( String darkestSecret ) {
-	this->darkestSecret;
+	this->darkestSecret = darkestSecret;
 }
 
 

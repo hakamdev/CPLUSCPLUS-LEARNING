@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 19:19:37 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/18 19:36:23 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/07/24 18:48:08 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Contact {
 		String	darkestSecret;
 
 	public:
+		~Contact( void );
 		Contact( void ); /* Default Constructor */
 		Contact(
 			String firstName,
