@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 19:36:42 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/24 18:48:24 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/24 19:35:15 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ String Contact::getLastName() {
 }
 
 String Contact::getNickname() {
-	return (this->lastName);
+	return (this->nickname);
 }
 
 String Contact::getPhoneNumber() {
