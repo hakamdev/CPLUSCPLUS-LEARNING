@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 17:45:14 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/24 20:48:09 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/24 21:05:43 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,8 @@ void	Phonebook::addContact( void ) {
 }
 
 void	Phonebook::searchContact( void ) {
-	int		index = 0;
+	int					index = 0;
+	String				_index;
 
 	std::cout << "List Of Contacts" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
@@ -101,4 +102,9 @@ void	Phonebook::searchContact( void ) {
 		index++;
 	}
 	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "Enter Index: ";
+	std::cin >> _index;
+	std::stringstream	s(_index);
+	s >> index;
+	std::cout << index << std::endl;
 }
