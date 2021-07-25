@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 17:45:14 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/24 21:05:43 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/25 13:17:51 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ void	Phonebook::searchContact( void ) {
 	std::cout << "---------------------------------------------" << std::endl;
 	while (index < numContacts)
 	{
-		// std::cout << "|    " << index << "     |";
 		std::cout << "|";
 		std::cout << std::setw(10) << index;
 		std::cout << "|";
