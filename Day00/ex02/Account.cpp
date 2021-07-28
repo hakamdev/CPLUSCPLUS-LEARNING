@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 17:09:06 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/28 19:15:40 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/28 19:29:27 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Account::Account( int initial_deposit ) :
 	_nbWithdrawals(0)
 {
 	// [19920104_091532] index:0;amount:42;created
+	Account::_totalAmount += _amount;
 	Account::_displayTimestamp();
 	std::cout	<< " index:" << _accountIndex << ';'
 				<< "amount:" << _amount << ';'
@@ -38,6 +39,8 @@ void	Account::makeDeposit( int deposit ) {
 
 	_amount += deposit;
 	_nbDeposits++;
+	Account::_totalNbDeposits++;
+	Account::_totalAmount += deposit;
 	Account::_displayTimestamp();
 	std::cout	<< " index:" << _accountIndex << ';'
 				<< "amount:" << _prev_amount << ';'
@@ -48,6 +51,29 @@ void	Account::makeDeposit( int deposit ) {
 }
 
 bool	Account::makeWithdrawal( int withdrawal ) {
+	// [19920104_091532] index:0;p_amount:47;withdrawal:refused
+	// [19920104_091532] index:1;p_amount:819;withdrawal:34;amount:785;nb_withdrawals:1
+	int const	_prev_amount = _amount;
+
+	if (withdrawal > _amount) {
+		Account::_displayTimestamp();
+		std::cout	<< " index:" << _accountIndex << ';'
+					<< "amount:" << _amount << ';'
+					<< "withdrawal:" << "refused" << ';'
+					<< std::endl;
+		return (false);
+	}
+	_amount -= withdrawal;
+	_nbWithdrawals++;
+	Account::_totalNbWithdrawals++;
+	Account::_totalAmount -= withdrawal;
+	Account::_displayTimestamp();
+	std::cout	<< " index:" << _accountIndex << ';'
+				<< "amount:" << _prev_amount << ';'
+				<< "withdrawal:" << withdrawal << ';'
+				<< "amount:" << _amount << ';'
+				<< "nb_withdrawals" << _nbWithdrawals << ';'
+				<< std::endl;
 	return true;
 }
 
