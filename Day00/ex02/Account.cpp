@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 17:09:06 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/28 18:46:53 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/28 19:06:07 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,22 @@
 #include <stdio.h>
 #include <iostream>
 
-Account::Account( int initial_deposit ) {
-	
+Account::Account( int initial_deposit ) :
+	_accountIndex(Account::_nbAccounts++),
+	_amount(initial_deposit),
+	_nbDeposits(0),
+	_nbWithdrawals(0)
+{
+	// [19920104_091532] index:0;amount:42;created
+	Account::_displayTimestamp();
+	std::cout	<< " index:" << _accountIndex << ';'
+				<< "amount:" << _amount << ';'
+				<< "created" << std::endl;
 }
+
+Account::Account( void ) { }
+
+Account::~Account( void ) { }
 
 void	Account::makeDeposit( int deposit ) {
 
@@ -32,7 +45,13 @@ int		Account::checkAmount( void ) const {
 }
 
 void	Account::displayStatus( void ) const {
-
+	// [19920104_091532] index:0;amount:42;deposits:0;withdrawals:0
+	Account::_displayTimestamp();
+	std::cout	<< " index:" << _accountIndex << ';'
+				<< "amount:" << _amount << ';'
+				<< "deposits:" << _nbDeposits << ';'
+				<< "withdrawals:" << _nbWithdrawals
+				<< std::endl;
 }
 
 /* STATIC MEMBERS */
