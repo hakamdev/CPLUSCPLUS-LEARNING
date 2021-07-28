@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 17:09:06 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/28 19:06:07 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/28 19:15:40 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,18 @@ Account::Account( void ) { }
 Account::~Account( void ) { }
 
 void	Account::makeDeposit( int deposit ) {
+	// [19920104_091532] index:0;p_amount:42;deposit:5;amount:47;nb_deposits:1
+	int	const	_prev_amount = _amount;
 
+	_amount += deposit;
+	_nbDeposits++;
+	Account::_displayTimestamp();
+	std::cout	<< " index:" << _accountIndex << ';'
+				<< "amount:" << _prev_amount << ';'
+				<< "deposit:" << deposit << ';'
+				<< "amount:" << _amount << ';'
+				<< "nb_deposits:" << _nbDeposits
+				<< std::endl;
 }
 
 bool	Account::makeWithdrawal( int withdrawal ) {
