@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 20:12:11 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 20:40:33 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/29 21:07:35 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class HumanB {
 		void	attack( void );
 
 		Weapon*	getWeapon( void );
-		void	setWeapon( Weapon weapon );
+		void	setWeapon( Weapon& weapon );
 
 		string&	name( void );
 };

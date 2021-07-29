@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 20:25:52 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 20:53:09 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/29 21:15:18 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,8 @@ Weapon*	HumanB::getWeapon( void ) {
 	return (_weapon);
 }
 
-void	HumanB::setWeapon( Weapon weapon ) {
+void	HumanB::setWeapon( Weapon& weapon ) {
 	this->_weapon = &weapon;
-	// cout << "Setter: " << _weapon->getType() << endl;
 }
 
 string&	HumanB::name( void ) {
