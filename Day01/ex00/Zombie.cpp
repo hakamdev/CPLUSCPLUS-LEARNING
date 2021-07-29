@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 14:25:27 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 15:20:05 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/29 17:57:01 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,18 @@ Zombie::Zombie( void ) {
 	cout << "Zombie created!" << endl;
  }
 
-Zombie::Zombie( string name ): name(name) {
-	cout << "Zombie: " << name << " created!" << endl;
+Zombie::Zombie( string name ): _name(name) {
+	cout << "Zombie: " << _name << " created!" << endl;
 }
 
 Zombie::~Zombie( void ) {
-	cout << "Zombie: " << name << " destroyed!" << endl; 
+	cout << "Zombie: " << _name << " destroyed!" << endl; 
 }
 
 void	Zombie::announce( void ) {
-	cout << name << " BraiiiiiiinnnzzzZ..." << endl;
+	cout << _name << " BraiiiiiiinnnzzzZ..." << endl;
 }
 
-string	Zombie::getName( void ) {
-	return (name);
-}
-
-void	Zombie::setName( string name ) {
-	this->name = name;
+string&	Zombie::name( void ) {
+	return (_name);
 }

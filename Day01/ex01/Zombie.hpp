@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:20:46 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 17:41:12 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/29 17:57:11 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class Zombie {
 		~Zombie( void );
 		
 		string&	name( void );
-		//void	setName( string name );
 		
 		void	announce( void );
 };

@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/29 15:19:09 by hakamgo           #+#    #+#              #
-#    Updated: 2021/07/29 17:55:40 by hakamgo          ###   ########.fr        #
+#    Created: 2021/07/29 17:55:52 by hakamgo           #+#    #+#              #
+#    Updated: 2021/07/29 18:22:14 by hakamgo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror
-NAME	=	zombie_test
-SRCS	=	Zombie.cpp ZombieHorde.cpp main.cpp
+NAME	=	refptr
+SRCS	=	main.cpp
 
 all: $(NAME)
 

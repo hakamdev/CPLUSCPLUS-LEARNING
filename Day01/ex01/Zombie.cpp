@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:20:22 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 17:41:50 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/29 17:56:40 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ using std::cout;
 using std::endl;
 
 Zombie::Zombie( void ) { 
-	_name = "Hakam...";
 	cout << "Zombie created!" << endl;
  }
 
@@ -35,7 +34,3 @@ void	Zombie::announce( void ) {
 string&	Zombie::name( void ) {
 	return (_name);
 }
-
-// void	Zombie::setName( string name ) {
-// 	this->name = name;
-// }
