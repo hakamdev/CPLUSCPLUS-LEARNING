@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 14:18:14 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 14:24:55 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/29 15:01:09 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,8 @@ class Zombie {
 		
 		void	announce( void );
 };
+
+Zombie*	newZombie( std::string name );
+void	randomChump( std::string name );
 
 #endif /* __ZOMBIE_HPP__ */

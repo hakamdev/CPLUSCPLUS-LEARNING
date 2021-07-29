@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 14:25:27 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 14:31:44 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/29 15:15:09 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Zombie::~Zombie( void ) {
 }
 
 void	Zombie::announce( void ) {
-	cout << name << "BraiiiiiiinnnzzzZ..." << endl;
+	cout << name << " BraiiiiiiinnnzzzZ..." << endl;
 }
 
 string	Zombie::getName( void ) {
