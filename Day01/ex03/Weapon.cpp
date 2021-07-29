@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 18:35:17 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 18:53:49 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/29 20:47:19 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 using std::cout;
 using std::endl;
+
+Weapon::Weapon( string type ): _type(type) {
+	cout << "Weapon created!" << endl;
+}
 
 Weapon::Weapon( void ) {
 	cout << "Weapon created!" << endl;
@@ -23,10 +27,10 @@ Weapon::~Weapon( void ) {
 	cout << "Weapon destroyed!" << endl;
 }
 
-string& const	Weapon::getType( void ) {
-	return (type);
+string&	Weapon::getType( void ) {
+	return (_type);
 }
 
-void			Weapon::setType( string type ) {
-	this->type = type;
+void	Weapon::setType( string type ) {
+	this->_type = type;
 }

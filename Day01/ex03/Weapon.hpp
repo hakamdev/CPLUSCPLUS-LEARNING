@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 18:30:12 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 18:53:14 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/29 20:46:53 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@ using std::string;
 class Weapon {
 
 	private:
-		string	type;
+		string	_type;
 
 	public:
+		Weapon( string type );
 		Weapon( void );
 		~Weapon( void );
-		string&	const	getType( void );
-		void			setType( string type );
+		string&	getType( void );
+		void	setType( string type );
 };
 
 #endif /* __WEAPON_HPP__ */
