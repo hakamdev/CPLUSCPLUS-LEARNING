@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 17:45:11 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 14:19:12 by hakamgo          ###   ########.fr       */
+/*   Created: 2021/07/29 14:18:14 by hakamgo           #+#    #+#             */
+/*   Updated: 2021/07/29 14:24:55 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __PHONEBOOK_HPP__
-# define __PHONEBOOK_HPP__
+#ifndef __ZOMBIE_HPP__
+# define __ZOMBIE_HPP__
 
-# include "Contact.hpp"
 # include <iostream>
-# include <iomanip>
 
-class Phonebook {
+using std::string;
+
+class Zombie {
+
 	private:
-		int		currentIndex;
-		int		numContacts;
-		Contact contacts[8];
-
-		void	printField( std::string field );
-		void	addContact( void );
-		void	searchContact( void );
+		string	name;
 
 	public:
-		Phonebook( void );
-		~Phonebook( void );
-		void run( void );
+		Zombie( void );
+		Zombie( string name );
+		~Zombie( void );
+		
+		string	getName( void );
+		void	setName( string name );
+		
+		void	announce( void );
 };
 
-#endif /* __PHONEBOOK_HPP__ */
+#endif /* __ZOMBIE_HPP__ */

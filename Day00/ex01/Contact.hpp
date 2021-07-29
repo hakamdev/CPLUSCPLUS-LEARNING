@@ -6,12 +6,12 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 19:19:37 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/24 18:48:08 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/29 14:19:37 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#ifndef __CONTACT_HPP__
+# define __CONTACT_HPP__
 
 # include <iostream>
 
@@ -51,4 +51,4 @@ class Contact {
 		void setDarkestSecret( String darkestSecret );
 };
 
-#endif /* CONTACT_HPP */
+#endif /* __CONTACT_HPP__ */

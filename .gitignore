@@ -1,3 +1,6 @@
 .vscode/
 *.out
 *.dSYM/
+*.mp4
+*/*.mp4
+**/*.mp4
