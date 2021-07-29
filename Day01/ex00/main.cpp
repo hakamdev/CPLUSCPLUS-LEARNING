@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:02:02 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 15:14:21 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/29 16:05:23 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 using std::cout;
 using std::endl;
+
+Zombie*	newZombie( std::string name );
+void	randomChump( std::string name );
 
 int		main( void ) {
 	/*
