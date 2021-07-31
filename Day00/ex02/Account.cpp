@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 17:09:06 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/28 19:44:33 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/07/30 15:47:14 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,10 +132,12 @@ void	Account::displayAccountsInfos( void ) {
 void	Account::_displayTimestamp( void ) {
 	time_t		_time;
 	struct tm	*_tm;
+	char		timestamp_str[20];
 
 	time(&_time);
 	_tm = localtime(&_time);
-	printf(
+	sprintf(
+		timestamp_str,
 		"[%d%02d%02d_%02d%02d%02d]", 
 		_tm->tm_year + 1900,
 		_tm->tm_mon,
@@ -144,5 +146,5 @@ void	Account::_displayTimestamp( void ) {
 		_tm->tm_min,
 		_tm->tm_sec
 		);
-	
+	std::cout << timestamp_str;
 }

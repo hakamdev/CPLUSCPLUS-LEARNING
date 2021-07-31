@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 13:16:57 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/30 18:07:27 by hakamgo          ###   ########.fr       */
+/*   Created: 2021/07/30 17:33:20 by hakamgo           #+#    #+#             */
+/*   Updated: 2021/07/30 18:07:40 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ using std::cout;
 using std::endl;
 
 Karen::Karen( void ) {
-	cout << "Karen Created!" << endl;
+	//cout << "Karen Created!" << endl;
 }
 
 Karen::~Karen( void ) {
-	cout << "Karen Destroyed!" << endl;
+	//cout << "Karen Destroyed!" << endl;
 }
 
 void	Karen::complain( std::string level ) {
@@ -53,36 +53,36 @@ void	Karen::complain( std::string level ) {
 
 void	Karen::debug( void ) {
 	cout	<< BGGREEN << CBlACK
-			<< "Debug:" << endl
+			<< "[ DEBUG ]" << endl
 			<< CRESET << CGREEN
 			<< "I love to get extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger.\nI just love it!"
 			<< CRESET
-			<< endl;
+			<< endl << endl;
 }
 
 void	Karen::info( void ) {
 	cout	<< CBlACK << BGCYAN
-			<< "Info:" << endl
+			<< "[ INFO ]" << endl
 			<< CRESET << CCYAN
 			<< "I cannot believe adding extra bacon cost more money.\nYou don’t put enough! If you did I would not have to ask for it!"
 			<< CRESET
-			<< endl;
+			<< endl << endl;
 }
 
 void	Karen::warning( void ) {
 	cout	<< BGYELLOW << CBlACK
-			<< "Warning:" << endl
+			<< "[ WARNING ]" << endl
 			<< CRESET << CYELLOW
 			<< "I think I deserve to have some extra bacon for free.\nI’ve been coming here for years and you just started working here last month."
 			<< CRESET
-			<< endl;
+			<< endl << endl;
 }
 
 void	Karen::error( void ) {
 	cout	<< BGRED << CBlACK
-			<< "Error:" << endl
+			<< "[ ERROR ]" << endl
 			<< CRESET << CRED
 			<< "This is unacceptable, I want to speak to the manager now."
 			<< CRESET
-			<< endl;
+			<< endl << endl;
 }
