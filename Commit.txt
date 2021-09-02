@@ -1,1 +1,1 @@
-git commit -am "Day01: ex01: finished, (D00 ex01 not finished)"
+D02: ex00: started & finished , (D00 ex01 & D01 ex04 not finished)
