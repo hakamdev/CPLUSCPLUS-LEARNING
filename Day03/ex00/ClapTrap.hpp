@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 16:19:38 by ehakam            #+#    #+#             */
-/*   Updated: 2021/09/02 16:32:31 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/09/04 14:30:57 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class ClapTrap {
 	public:
 		ClapTrap( void );
 		ClapTrap( std::string name );
-		ClapTrap( ClapTrap& copy );
+		ClapTrap( ClapTrap const & copy );
 		~ClapTrap( void );
 		ClapTrap&	operator = ( ClapTrap const & copy );
 		void		attack( std::string const & target );

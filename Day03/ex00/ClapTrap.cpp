@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 16:36:28 by ehakam            #+#    #+#             */
-/*   Updated: 2021/09/02 18:41:11 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/09/04 14:30:38 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap( void ):
 		_hitPoints(10),
 		_energyPoints(10),
 		_attackDamage(0) {
-	cout << "Default Constructor called!" << endl;
+	cout << "ClapTrap: Default Constructor called!" << endl;
 }
 
 ClapTrap::ClapTrap( std::string name ): 
@@ -28,11 +28,11 @@ ClapTrap::ClapTrap( std::string name ):
 		_hitPoints(10),
 		_energyPoints(10),
 		_attackDamage(0) {
-	cout << "Parameterized Constructor called!" << endl;
+	cout << "ClapTrap: Parameterized Constructor called!" << endl;
 }
 
-ClapTrap::ClapTrap( ClapTrap& copy ) {
-	cout << "Copy Constructor called!" << endl;
+ClapTrap::ClapTrap( ClapTrap const & copy ) {
+	cout << "ClapTrap: Copy Constructor called!" << endl;
 	*this = copy;
 }
 
@@ -41,11 +41,12 @@ ClapTrap::~ClapTrap( void ) {
 }
 
 ClapTrap&	ClapTrap::operator = ( ClapTrap const & copy ) {
-	cout << "= operator called!" << endl;
+	cout << "ClapTrap: = operator called!" << endl;
 	this->_name = copy._name;
 	this->_hitPoints = copy._hitPoints;
 	this->_energyPoints = copy._energyPoints;
 	this->_attackDamage = copy._attackDamage;
+	return (*this);
 }
 
 void		ClapTrap::attack( std::string const & target ) {

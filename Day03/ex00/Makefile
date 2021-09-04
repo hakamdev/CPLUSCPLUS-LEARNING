@@ -6,13 +6,13 @@
 #    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/02 16:18:46 by ehakam            #+#    #+#              #
-#    Updated: 2021/09/02 16:19:14 by ehakam           ###   ########.fr        #
+#    Updated: 2021/09/04 14:25:10 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror
-NAME	=	fixed
+NAME	=	clapTrap
 SRCS	=	ClapTrap.cpp main.cpp
 
 all: $(NAME)
