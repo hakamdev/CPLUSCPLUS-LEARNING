@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 16:37:38 by ehakam            #+#    #+#             */
-/*   Updated: 2021/09/07 16:45:14 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/09/07 18:40:52 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-class DiamondTrap : ScavTrap, FragTrap {
+class DiamondTrap : public ScavTrap, public FragTrap {
 	public:
-		
+		DiamondTrap( void );
+		DiamondTrap( std::string name );
+		DiamondTrap( DiamondTrap const & copy );
+		~DiamondTrap( void );
+		DiamondTrap&	operator = ( DiamondTrap const & copy );
 };
 
 #endif /* __DIAMONDTRAP_HPP__ */

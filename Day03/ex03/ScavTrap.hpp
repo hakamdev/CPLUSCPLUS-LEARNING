@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 18:20:13 by ehakam            #+#    #+#             */
-/*   Updated: 2021/09/06 18:53:21 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/09/07 17:46:12 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 	
 	public:
 		ScavTrap( void );
