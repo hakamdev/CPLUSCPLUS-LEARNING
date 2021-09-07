@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 18:20:11 by ehakam            #+#    #+#             */
-/*   Updated: 2021/09/07 16:03:50 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/09/06 19:06:03 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,12 @@ ScavTrap::ScavTrap( void ) : ClapTrap() {
 	this->_attackDamage = 20;
 }
 
-ScavTrap::ScavTrap( std::string name ) : ClapTrap(name, 100, 50, 20) {
+ScavTrap::ScavTrap( std::string name ) : ClapTrap(name) {
 	cout << "ScavTrap: Parameterized Constructor called!" << endl;
+	this->_name = name;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap( ScavTrap const & copy ) {
