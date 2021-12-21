@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 21:22:15 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 22:26:19 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/12/21 20:33:48 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,52 @@ using std::string;
 using std::cout;
 using std::endl;
 
+void	replace( string &line, string &query,string &substitution ) {
+	size_t	index;
+
+	index = line.find(query);
+	while (index != string::npos) {
+		line.erase(index, query.length());
+		line.insert(index, substitution);
+		index = line.find(query);
+	}
+}
+
+void	saveToNewFile(string &fileName, string &content) {
+	string oFileName = fileName + ".replace";
+	ofstream ofs;
+	
+	ofs.open(oFileName);
+	ofs << content;
+	ofs.close();
+}
+
+void	readFileAndReplace( string &fileName, string &query,string &substitution ) {
+	ifstream	ifs(fileName);
+	string		newContent;
+	string		line;
+
+	while(getline(ifs, line)) {
+		replace(line, query, substitution);
+		newContent += line;
+		newContent += "\n";
+	}
+	saveToNewFile(fileName, newContent);
+	ifs.close();
+}
+
 int		main( int ac, char **av ) {
-	if (ac != 4)
+	if (ac != 4) {
+		cout << "Usage: <filename> <query> <substitute>" << endl << endl;
 		return (1);
+	}
 	string _iFileName = av[1];
 	string _oFileName = _iFileName + ".replace";
-	string _find = av[2];
-	string _replace = av[3];
-	string _content;
+	string _query = av[2];
+	string _substitution = av[3];
+	string _newContent;
 
-	ifstream	iFile;
-	iFile.open(_iFileName);
-	if (iFile.is_open()) {
-		while (getline(iFile, _content)) {
-			cout << _content << endl;
-			while (_content.find(_find) != string::npos) {
-				
-			}
-		}
-	}
-	iFile.close();
+	readFileAndReplace(_iFileName, _query, _substitution);
+
 	return (0);
 }
