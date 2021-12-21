@@ -3,17 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 18:02:18 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/18 18:24:19 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/12/21 17:38:46 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstring>
 #include <iostream>
 
-std::string	toUpper(char *str) {
+using std::cout;
+using std::string;
+using std::endl;
+
+string	toUpper(char *str) {
 	std::string	upperStr;
 
 	for (size_t i = 0; str[i]; i++) {
@@ -22,14 +26,15 @@ std::string	toUpper(char *str) {
 	return (upperStr);
 }
 
-int			main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
-	for (int i = 1; i < argc; i++) {
-		std::cout << toUpper(argv[i]);
-	}
 	if (argc == 1) {
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
+		return (0);
 	}
-	std::cout << std::endl;
+	for (int i = 1; i < argc; i++) {
+		cout << toUpper(argv[i]);
+	}
+	cout << endl;
 	return (0);
 }

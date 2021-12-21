@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 19:36:42 by ehakam            #+#    #+#             */
-/*   Updated: 2021/07/24 19:35:15 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/12/21 17:50:48 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ Contact::Contact() {
 
  /* Constructor with initialization list */
 Contact::Contact( 
-			String firstName,
-			String lastName,
-			String nickname,
-			String phoneNumber,
-			String darkestSecret 
+			string firstName,
+			string lastName,
+			string nickname,
+			string phoneNumber,
+			string darkestSecret 
 			):	firstName(firstName),
 				lastName(lastName),
 				nickname(nickname),
@@ -38,44 +38,44 @@ Contact::~Contact() {
 }
 
 /* getters */
-String Contact::getFirstName() {
+string Contact::getFirstName() {
 	return (this->firstName);
 }
 
-String Contact::getLastName() {
+string Contact::getLastName() {
 	return (this->lastName);
 }
 
-String Contact::getNickname() {
+string Contact::getNickname() {
 	return (this->nickname);
 }
 
-String Contact::getPhoneNumber() {
+string Contact::getPhoneNumber() {
 	return (this->phoneNumber);
 }
 
-String Contact::getDarkestSecret() {
+string Contact::getDarkestSecret() {
 	return (this->darkestSecret);
 }
 
 /* setters */
-void Contact::setFirstName( String firstName ) {
+void Contact::setFirstName( string firstName ) {
 	this->firstName = firstName;
 }
 
-void Contact::setLastName( String lastName ) {
+void Contact::setLastName( string lastName ) {
 	this->lastName = lastName;
 }
 
-void Contact::setNickname( String nickname ) {
+void Contact::setNickname( string nickname ) {
 	this->nickname = nickname;
 }
 
-void Contact::setPhoneNumber( String phoneNumber ) {
+void Contact::setPhoneNumber( string phoneNumber ) {
 	this->phoneNumber = phoneNumber;
 }
 
-void Contact::setDarkestSecret( String darkestSecret ) {
+void Contact::setDarkestSecret( string darkestSecret ) {
 	this->darkestSecret = darkestSecret;
 }
 

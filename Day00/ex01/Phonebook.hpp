@@ -6,7 +6,7 @@
 /*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 17:45:11 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 14:19:12 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/12/21 18:01:22 by hakamgo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,20 @@
 # include <iostream>
 # include <iomanip>
 
+using std::stringstream;
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+using std::setw;
+
 class Phonebook {
 	private:
 		int		currentIndex;
 		int		numContacts;
 		Contact contacts[8];
 
-		void	printField( std::string field );
+		void	printField( string field );
 		void	addContact( void );
 		void	searchContact( void );
 
