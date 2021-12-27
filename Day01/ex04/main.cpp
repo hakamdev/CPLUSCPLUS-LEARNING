@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 21:22:15 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/12/21 20:33:48 by ehakam           ###   ########.fr       */
+/*   Updated: 2021/12/22 00:10:29 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ void	saveToNewFile(string &fileName, string &content) {
 	ofstream ofs;
 	
 	ofs.open(oFileName);
+	if (!ofs.is_open()) {
+		cout << "Error opening file!" << endl;
+		return;
+	}
 	ofs << content;
 	ofs.close();
 }
@@ -45,6 +49,10 @@ void	readFileAndReplace( string &fileName, string &query,string &substitution ) 
 	string		newContent;
 	string		line;
 
+	if (!ifs.is_open()) {
+		cout << "Error opening file!" << endl;
+		return;
+	}
 	while(getline(ifs, line)) {
 		replace(line, query, substitution);
 		newContent += line;
@@ -56,7 +64,7 @@ void	readFileAndReplace( string &fileName, string &query,string &substitution ) 
 
 int		main( int ac, char **av ) {
 	if (ac != 4) {
-		cout << "Usage: <filename> <query> <substitute>" << endl << endl;
+		cout << "Usage: <filename> <query string> <substitution string>" << endl << endl;
 		return (1);
 	}
 	string _iFileName = av[1];
