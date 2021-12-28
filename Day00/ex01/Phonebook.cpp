@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 17:45:14 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/12/21 19:19:08 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/12/27 20:27:49 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	clearTerminal() {
 		This escape sequence clears the terminal window 
 		and places the cursor on 1;1 position :)
 	*/
-	cout << "\033[2J\033[1;1H";
+	std::cout << "\033[2J\033[1;1H";
 }
 
 Phonebook::Phonebook( void ) {
@@ -30,13 +30,13 @@ Phonebook::~Phonebook( void ) {
 }
 
 void	Phonebook::run( void ) {
-	string command;
+	std::string command;
 
 	while (true)
 	{
-		cout << "Please, Enter Command: <ADD, SEARCH, EXIT>" << endl;
-		cout << "> ";
-		getline(cin, command);
+		std::cout << "Please, Enter Command: <ADD, SEARCH, EXIT>" << std::endl;
+		std::cout << "> ";
+		getline(std::cin, command);
 		if (command == "EXIT")
 			break ;
 		else if (command == "ADD")
@@ -48,48 +48,48 @@ void	Phonebook::run( void ) {
 	}
 }
 
-void	Phonebook::printField( string field ) {
+void	Phonebook::printField( std::string field ) {
 	if (field.length() <= 10) {
-		cout << setw(10) << field;
+		std::cout << std::setw(10) << field;
 	} else {
-		cout<< field.substr(0, 9) << ".";
+		std::cout<< field.substr(0, 9) << ".";
 	}
 }
 
 void	Phonebook::addContact( void ) {
-	string	value;
+	std::string	value;
 
 	clearTerminal();
-	cout << "Adding A New Contact" << endl;
+	std::cout << "Adding A New Contact" << std::endl;
 
-	cout << "Fist Name: ";
-	getline(cin, value);
+	std::cout << "Fist Name: ";
+	getline(std::cin, value);
 	this->contacts[this->currentIndex].setFirstName(value);
 
-	cout << "Last Name: ";
-	getline(cin, value);
+	std::cout << "Last Name: ";
+	getline(std::cin, value);
 	this->contacts[this->currentIndex].setLastName(value);
 
-	cout << "Nickname: ";
-	getline(cin, value);
+	std::cout << "Nickname: ";
+	getline(std::cin, value);
 	this->contacts[this->currentIndex].setNickname(value);
 
-	cout << "Phone Number: ";
-	getline(cin, value);
+	std::cout << "Phone Number: ";
+	getline(std::cin, value);
 	this->contacts[this->currentIndex].setPhoneNumber(value);
 
-	cout << "Darkest Secret: ";
-	getline(cin, value);
+	std::cout << "Darkest Secret: ";
+	getline(std::cin, value);
 	this->contacts[this->currentIndex].setDarkestSecret(value);
 
 	if (numContacts < 8)
 		numContacts++;
 	this->currentIndex = ++this->currentIndex % 8;
 	clearTerminal();
-	cout << "Contact Added Successfully!" << endl << endl;
+	std::cout << "Contact Added Successfully!" << std::endl << std::endl;
 }
 
-bool	checkIndex(string index) {
+bool	checkIndex(std::string index) {
 	unsigned long i = 0;
 
 	while (index[i] == ' ') i++;
@@ -102,49 +102,49 @@ bool	checkIndex(string index) {
 
 void	printContactInfo(Contact contact) {
 	clearTerminal();
-	cout << "First Name:      " << contact.getFirstName() << endl;
-	cout << "Last Name:       " << contact.getLastName() << endl;
-	cout << "Nickname:        " << contact.getNickname() << endl;
-	cout << "Phone Number:    " << contact.getPhoneNumber() << endl;
-	cout << "Darkest Secret:  " << contact.getDarkestSecret() << endl << endl;
+	std::cout << "First Name:      " << contact.getFirstName() << std::endl;
+	std::cout << "Last Name:       " << contact.getLastName() << std::endl;
+	std::cout << "Nickname:        " << contact.getNickname() << std::endl;
+	std::cout << "Phone Number:    " << contact.getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret:  " << contact.getDarkestSecret() << std::endl << std::endl;
 }
 
 void	Phonebook::searchContact( void ) {
 	int		index = 0;
-	string	_index;
+	std::string	_index;
 
 	clearTerminal();
-	cout << "List Of Contacts" << endl;
-	cout << "---------------------------------------------" << endl;
-	cout << "|     Index|First Name| Last Name|  Nickname|" << endl;
-	cout << "---------------------------------------------" << endl;
+	std::cout << "List Of Contacts" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 	while (index < numContacts)
 	{
-		cout << "|";
-		cout << setw(10) << index;
-		cout << "|";
+		std::cout << "|";
+		std::cout << std::setw(10) << index;
+		std::cout << "|";
 		printField(contacts[index].getFirstName());
-		cout << "|";
+		std::cout << "|";
 		printField(contacts[index].getLastName());
-		cout << "|";
+		std::cout << "|";
 		printField(contacts[index].getNickname());
-		cout << "|" << endl;
+		std::cout << "|" << std::endl;
 		index++;
 	}
-	cout << "---------------------------------------------" << endl;
-	cout << "Enter Index: ";
-	getline(cin, _index);
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "Enter Index: ";
+	getline(std::cin, _index);
 	if (!checkIndex(_index)) {
-		cout << "Invalid Index!" << endl;
+		std::cout << "Invalid Index!" << std::endl;
 		return;
 	}
-	stringstream	s(_index);
+	std::stringstream	s(_index);
 	s >> index;
 	if (!(index >= 0 && index <= currentIndex)) {
-		cout << "Index outside of range (0 - " << currentIndex << ")!" << endl; 
+		std::cout << "Index outside of range (0 - " << currentIndex << ")!" << std::endl; 
 		return;
 	}
 	clearTerminal();
-	cout << "Displaying Contact Info Index: " << index << endl;
+	std::cout << "Displaying Contact Info Index: " << index << std::endl;
 	printContactInfo(contacts[index]);
 }

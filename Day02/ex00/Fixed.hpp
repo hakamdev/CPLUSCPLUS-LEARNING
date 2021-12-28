@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 18:37:59 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/31 02:00:49 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/12/27 20:11:56 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __FIXED_HPP__
 # define __FIXED_HPP__
 
-#include <string>
+# include <string>
 
 using std::string;
 

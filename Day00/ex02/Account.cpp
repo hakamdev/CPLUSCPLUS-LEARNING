@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 17:09:06 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/30 15:47:14 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/12/07 21:00:06 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <ctime>
 #include <stdio.h>
 #include <iostream>
+# include <iomanip>
 
 Account::Account( int initial_deposit ) :
 	_accountIndex(Account::_nbAccounts++),
@@ -130,21 +131,31 @@ void	Account::displayAccountsInfos( void ) {
 }
 
 void	Account::_displayTimestamp( void ) {
-	time_t		_time;
-	struct tm	*_tm;
+	time_t		ttime;
+	struct tm	*tm;
 	char		timestamp_str[20];
 
-	time(&_time);
-	_tm = localtime(&_time);
-	sprintf(
-		timestamp_str,
-		"[%d%02d%02d_%02d%02d%02d]", 
-		_tm->tm_year + 1900,
-		_tm->tm_mon,
-		_tm->tm_mday,
-		_tm->tm_hour,
-		_tm->tm_min,
-		_tm->tm_sec
-		);
-	std::cout << timestamp_str;
+	time(&ttime);
+	tm = localtime(&ttime);
+
+	std::cout << "[";
+	std::cout << std::setfill('0') << std::setw(4) << tm->tm_year + 1900;
+	std::cout << std::setfill('0') << std::setw(2) << tm->tm_mon;
+	std::cout << std::setfill('0') << std::setw(2) << tm->tm_mday;
+	std::cout << "_";
+	std::cout << std::setfill('0') << std::setw(2) << tm->tm_hour;
+	std::cout << std::setfill('0') << std::setw(2) << tm->tm_min;
+	std::cout << std::setfill('0') << std::setw(2) << tm->tm_sec;
+	std::cout << "]";
+
+	// sprintf(
+	// 	timestamp_str,
+	// 	"[%d%02d%02d_%02d%02d%02d]", 
+	// 	tm->tm_year + 1900,
+	// 	tm->tm_mon,
+	// 	tm->tm_mday,
+	// 	tm->tm_hour,
+	// 	tm->tm_min,
+	// 	tm->tm_sec);
+	// std::cout << timestamp_str;
 }
