@@ -3,34 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 14:25:27 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 17:57:01 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/12/29 01:35:45 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-using std::cout;
-using std::endl;
-
 Zombie::Zombie( void ) { 
-	cout << "Zombie created!" << endl;
+	std::cout << "Zombie created!" << std::endl;
  }
 
-Zombie::Zombie( string name ): _name(name) {
-	cout << "Zombie: " << _name << " created!" << endl;
+Zombie::Zombie( std::string name ): _name(name) {
+	std::cout << "Zombie: " << _name << " created!" << std::endl;
 }
 
 Zombie::~Zombie( void ) {
-	cout << "Zombie: " << _name << " destroyed!" << endl; 
+	std::cout << "Zombie: " << _name << " destroyed!" << std::endl; 
 }
 
 void	Zombie::announce( void ) {
-	cout << _name << " BraiiiiiiinnnzzzZ..." << endl;
+	std::cout << _name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-string&	Zombie::name( void ) {
+std::string&	Zombie::name( void ) {
 	return (_name);
 }

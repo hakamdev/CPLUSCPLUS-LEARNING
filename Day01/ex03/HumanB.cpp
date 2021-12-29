@@ -3,33 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 20:25:52 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 21:15:18 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/12/29 01:03:16 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-using std::cout;
-using std::endl;
-
 HumanB::HumanB( void ) {
-	cout << "HumanB Created! " << endl;
+	std::cout << "HumanB Created! " << std::endl;
 }
 
-HumanB::HumanB( string name ): _name(name) {
-	cout << "HumanB Created! " << endl;
+HumanB::HumanB( std::string name ): _name(name) {
+	std::cout << "HumanB Created! " << std::endl;
 }
 
 HumanB::~HumanB( void ) {
-	cout << "HumanA Destroyed!" << endl;
+	std::cout << "HumanA Destroyed!" << std::endl;
 }
 
 void	HumanB::attack( void ) {
 	// NAME attacks with his WEAPON_TYPE
-	cout << _name << " attacks with his " << _weapon->getType() << endl;
+	std::cout << _name << " attacks with his " << _weapon->getType() << std::endl;
 }
 
 Weapon*	HumanB::getWeapon( void ) {
@@ -40,6 +37,6 @@ void	HumanB::setWeapon( Weapon& weapon ) {
 	this->_weapon = &weapon;
 }
 
-string&	HumanB::name( void ) {
+std::string&	HumanB::name( void ) {
 	return (_name);
 }

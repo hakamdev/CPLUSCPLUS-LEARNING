@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 17:33:14 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/30 18:16:21 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/12/29 01:32:16 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@
 #define CBlACK "\033[1;30m"
 #define CRESET "\033[1;0m"
 
-using std::string;
-using std::cout;
-using std::endl;
-
 enum Level {
 	DEBUG = 1,
 	INFO = 2,
@@ -29,7 +25,7 @@ enum Level {
 	ELSE = 5
 };
 
-Level	getLevel(string level) {
+Level	getLevel(std::string level) {
 	Level l = ELSE;
 	level.compare("DEBUG") == 0 && (l = DEBUG);
 	level.compare("INFO") == 0 && (l = INFO);
@@ -63,10 +59,10 @@ int		main( int ac, char *av[] ) {
 		karen.complain("ERROR");
 		break;
 	default:
-		cout	<< BGBLUE << CBlACK
+		std::cout	<< BGBLUE << CBlACK
 				<< "[ Probably complaining about insignificant problems ]"
 				<< CRESET
-				<< endl << endl;
+				<< std::endl << std::endl;
 		break;
 	}
 }

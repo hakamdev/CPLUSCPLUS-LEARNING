@@ -3,32 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 18:00:13 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 18:21:16 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/12/29 01:01:04 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-using std::string;
-using std::cout;
-using std::endl;
-
 int		main( void ) {
-	string	_string = "HI THIS IS BRAIN";
-	string	*stringPTR = &_string;
-	string&	stringREF = _string;
+	std::string	_string = "HI THIS IS BRAIN";
+	std::string	*stringPTR = &_string;
+	std::string&	stringREF = _string;
 	
-	cout	<< "Address: variable: " << &_string << endl
-			<< "Address: pointer:  " << stringPTR << endl
-			<< "Address: referece: " << &stringREF << endl;
+	std::cout	<< "Address: variable: " << &_string << std::endl
+			<< "Address: pointer:  " << stringPTR << std::endl
+			<< "Address: referece: " << &stringREF << std::endl;
 			
-	cout	<< endl;
+	std::cout	<< std::endl;
 
-	cout	<< "Value: pointer:  " << *stringPTR << endl
-			<< "Value: referece: " << stringREF << endl;
+	std::cout	<< "Value: pointer:  " << *stringPTR << std::endl
+			<< "Value: referece: " << stringREF << std::endl;
 
 	return (0);
 }

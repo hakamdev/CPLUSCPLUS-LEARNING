@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 14:18:14 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 17:57:27 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/12/29 00:56:52 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,17 @@
 
 # include <iostream>
 
-using std::string;
-
 class Zombie {
 
 	private:
-		string	_name;
+		std::string	_name;
 
 	public:
 		Zombie( void );
-		Zombie( string name );
+		Zombie( std::string name );
 		~Zombie( void );
 		
-		string&	name( void );
+		std::string&	name( void );
 		
 		void	announce( void );
 };

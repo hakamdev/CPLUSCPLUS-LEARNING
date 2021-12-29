@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 19:34:49 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/29 20:46:22 by hakamgo          ###   ########.fr       */
+/*   Updated: 2021/12/29 01:02:36 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,18 @@
 # include <iostream>
 # include "Weapon.hpp"
 
-using std::string;
-
 class HumanA {
 	
 	private:
-		string	_name;
+		std::string	_name;
 		Weapon& _weapon;
 	
 	public:
-		HumanA( string name, Weapon& weapon );
+		HumanA( std::string name, Weapon& weapon );
 		~HumanA( void );
 		void	attack( void );
 		
-		string& getName( void );
+		std::string& getName( void );
 		Weapon&	getWeapon( void );
 };
 
