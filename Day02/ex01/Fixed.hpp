@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 18:37:59 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/12/29 02:44:57 by ehakam           ###   ########.fr       */
+/*   Created: 2021/12/29 02:10:54 by ehakam            #+#    #+#             */
+/*   Updated: 2021/12/29 02:44:10 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,18 @@ class Fixed {
 
 	public:
 		Fixed( void );
+		Fixed( int value );
+		Fixed( float value );
 		Fixed( Fixed const & copy );
 		~Fixed( void );
 		Fixed&	operator = ( Fixed const & copy );
 
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
+		float	toFloat( void ) const;
+		int		toInt( void ) const;
 };
+
+std::ostream&	operator << (std::ostream &os, const Fixed &fixed);
 
 #endif /* __FIXED_HPP__ */

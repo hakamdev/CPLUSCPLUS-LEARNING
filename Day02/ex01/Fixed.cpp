@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 18:38:02 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/12/29 02:45:10 by ehakam           ###   ########.fr       */
+/*   Created: 2021/12/29 02:11:28 by ehakam            #+#    #+#             */
+/*   Updated: 2021/12/29 02:54:26 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,23 @@ Fixed::Fixed( Fixed const & copy ) {
 	*this = copy;
 }
 
+Fixed::Fixed( int value ) {
+	_value = value << _precision;
+	std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed( float value ) {
+	_value = value * (float)(1 << _precision);
+	std::cout << "Float constructor called" << std::endl;
+}
+
 Fixed::~Fixed( void ) {
 	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed&	Fixed::operator = ( Fixed const & copy ) {
 	std::cout << "Assignation operator called" << std::endl;
-	this->_value = copy.getRawBits();
+	this->_value = copy._value;
 	return (*this);
 }
 
@@ -41,4 +51,18 @@ int		Fixed::getRawBits( void ) const {
 void	Fixed::setRawBits( int const raw ) {
 	std::cout << "setRawBits member function called" << std::endl;
 	_value = raw;
+}
+
+float	Fixed::toFloat( void ) const {
+	return (float)_value / (float)(1 << _precision);
+}
+
+int		Fixed::toInt( void ) const {
+	return _value >> _precision;
+}
+
+std::ostream&	operator << (std::ostream &os, const Fixed &fixed)
+{
+	os << fixed.toFloat();
+    return os;
 }
