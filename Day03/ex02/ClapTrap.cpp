@@ -6,21 +6,14 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 18:20:08 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/07 03:23:29 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/01/07 04:12:42 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap( void ): 
-		_hitPoints(10),
-		_energyPoints(10),
-		_attackDamage(0) {
-	std::cout << "ClapTrap: Base Class: Default Constructor called!" << std::endl;
-}
-
-ClapTrap::ClapTrap( std::string name ): 
+ClapTrap::ClapTrap( std::string name ):
 		_name(name),
 		_hitPoints(10),
 		_energyPoints(10),

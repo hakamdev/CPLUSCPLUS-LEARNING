@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 18:20:13 by ehakam            #+#    #+#             */
-/*   Updated: 2021/09/06 18:53:21 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/01/07 04:13:01 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 class ScavTrap : public ClapTrap {
 	
 	public:
-		ScavTrap( void );
 		ScavTrap( std::string name );
 		~ScavTrap( void );
 		ScavTrap( ScavTrap const & copy );

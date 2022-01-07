@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 16:19:38 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/07 03:18:24 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/01/07 04:08:30 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class ClapTrap {
 		int			_attackDamage;
 	
 	public:
-		ClapTrap( void );
 		ClapTrap( std::string name );
 		ClapTrap( ClapTrap const & copy );
 		~ClapTrap( void );

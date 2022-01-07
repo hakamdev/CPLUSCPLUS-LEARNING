@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 18:20:03 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/07 03:27:20 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/01/07 05:08:29 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
+
 #include <iostream>
 
 int		main(void) {
-	std::cout << "======================= Constructors Tests =======================" << std::endl;
-	ClapTrap	clapTrap1;
-	ClapTrap	clapTrap2("CT 1");
-	ClapTrap	clapTrap3 = clapTrap2;
-	//ClapTrap	clapTrap4(clapTrap2);
-	std::cout << "======================= Methods Tests =======================" << std::endl;
-	clapTrap2.attack("Enemy 1");
-	clapTrap2.attack("Enemy 2");
-	clapTrap2.takeDamage(5);
-	clapTrap2.beRepaired(30);
+	
+	DiamondTrap dt("Mosh");
+	dt.whoAmI();
+	dt.attack("Target");
+	dt.takeDamage(2);
+	dt.beRepaired(2);
+	dt.guardGate();
+	dt.highFivesGuys();
 
-	// TODO: add ScavTrap and FragTrap Tests
 	
 	return (0);
 }

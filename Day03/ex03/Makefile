@@ -6,12 +6,12 @@
 #    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/07 03:36:27 by ehakam            #+#    #+#              #
-#    Updated: 2022/01/07 03:42:04 by ehakam           ###   ########.fr        #
+#    Updated: 2022/01/07 04:30:40 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -Wshadow -Wno-shadow
 NAME	=	test
 SRCS	=	ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp main.cpp
 

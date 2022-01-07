@@ -6,16 +6,12 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 15:55:21 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/07 03:24:04 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/01/07 04:13:20 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <iostream>
-
-FragTrap::FragTrap( void ) : ClapTrap() {
-	std::cout << "FragTrap: Default Constructor called!" << std::endl;
-}
 
 FragTrap::FragTrap( std::string name ) : ClapTrap(name, 100, 100, 30) {
 	std::cout << "FragTrap: Parameterized Constructor called!" << std::endl;
@@ -25,7 +21,7 @@ FragTrap::~FragTrap( void ) {
 	std::cout << "FragTrap: Destructor called!" << std::endl;	
 }
 
-FragTrap::FragTrap( FragTrap const & copy ) {
+FragTrap::FragTrap( FragTrap const & copy ) : ClapTrap(copy) {
 	std::cout << "FragTrap: Copy Constructor called!" << std::endl;
 	*this = copy;
 }
