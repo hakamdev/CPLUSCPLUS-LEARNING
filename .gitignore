@@ -4,6 +4,7 @@
 *.mp4
 */*.mp4
 **/*.mp4
+*test
 *_test
 */*_test
 **/*_test

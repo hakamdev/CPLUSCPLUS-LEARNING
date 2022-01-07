@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 18:20:06 by ehakam            #+#    #+#             */
-/*   Updated: 2021/09/07 17:43:16 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/01/07 03:26:15 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 
 # include <string>
 
-using std::string;
-
 class ClapTrap {
 	
 	protected:
-		string	_name;
-		int		_hitPoints;
-		int		_energyPoints;
-		int		_attackDamage;
+		std::string	_name;
+		int			_hitPoints;
+		int			_energyPoints;
+		int			_attackDamage;
 	
 	public:
 		ClapTrap( void );

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 17:09:06 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/12/07 21:00:06 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/01/07 03:12:35 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,15 +147,4 @@ void	Account::_displayTimestamp( void ) {
 	std::cout << std::setfill('0') << std::setw(2) << tm->tm_min;
 	std::cout << std::setfill('0') << std::setw(2) << tm->tm_sec;
 	std::cout << "]";
-
-	// sprintf(
-	// 	timestamp_str,
-	// 	"[%d%02d%02d_%02d%02d%02d]", 
-	// 	tm->tm_year + 1900,
-	// 	tm->tm_mon,
-	// 	tm->tm_mday,
-	// 	tm->tm_hour,
-	// 	tm->tm_min,
-	// 	tm->tm_sec);
-	// std::cout << timestamp_str;
 }

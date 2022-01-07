@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/09/02 16:18:46 by ehakam            #+#    #+#              #
-#    Updated: 2022/01/07 03:36:07 by ehakam           ###   ########.fr        #
+#    Created: 2022/01/07 03:36:27 by ehakam            #+#    #+#              #
+#    Updated: 2022/01/07 03:42:04 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror
 NAME	=	test
-SRCS	=	ClapTrap.cpp main.cpp
+SRCS	=	ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp main.cpp
 
 all: $(NAME)
 

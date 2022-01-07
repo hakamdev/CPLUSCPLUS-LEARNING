@@ -6,35 +6,32 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 15:55:21 by ehakam            #+#    #+#             */
-/*   Updated: 2021/09/07 16:33:33 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/01/07 03:24:04 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <iostream>
 
-using std::cout;
-using std::endl;
-
 FragTrap::FragTrap( void ) : ClapTrap() {
-	cout << "FragTrap: Default Constructor called!" << endl;
+	std::cout << "FragTrap: Default Constructor called!" << std::endl;
 }
 
 FragTrap::FragTrap( std::string name ) : ClapTrap(name, 100, 100, 30) {
-	cout << "FragTrap: Parameterized Constructor called!" << endl;
+	std::cout << "FragTrap: Parameterized Constructor called!" << std::endl;
 }
 
 FragTrap::~FragTrap( void ) {
-	cout << "FragTrap: Destructor called!" << endl;	
+	std::cout << "FragTrap: Destructor called!" << std::endl;	
 }
 
 FragTrap::FragTrap( FragTrap const & copy ) {
-	cout << "FragTrap: Copy Constructor called!" << endl;
+	std::cout << "FragTrap: Copy Constructor called!" << std::endl;
 	*this = copy;
 }
 
 FragTrap&	FragTrap::operator = ( FragTrap const & copy ) {
-	cout << "FragTrap: = operator called!" << endl;
+	std::cout << "FragTrap: = operator called!" << std::endl;
 	this->_name = copy._name;
 	this->_hitPoints = copy._hitPoints;
 	this->_energyPoints = copy._energyPoints;
@@ -43,5 +40,5 @@ FragTrap&	FragTrap::operator = ( FragTrap const & copy ) {
 }
 
 void		FragTrap::highFivesGuys( void ) {
-	cout << "FragTrap: " << _name << " has high fived you!" << endl;
+	std::cout << "FragTrap: " << _name << " has high fived you!" << std::endl;
 }
