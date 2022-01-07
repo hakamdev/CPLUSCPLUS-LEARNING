@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 02:10:54 by ehakam            #+#    #+#             */
-/*   Updated: 2021/12/29 02:44:10 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/01/07 02:00:19 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __FIXED_HPP__
 
 # include <string>
+# include <cmath>
 
 class Fixed {
 	private:

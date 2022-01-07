@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 02:58:10 by ehakam            #+#    #+#             */
-/*   Updated: 2021/12/29 03:33:41 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/01/07 02:43:21 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Fixed::Fixed( int value ) {
 }
 
 Fixed::Fixed( float value ) {
-	_value = value * (float)(1 << _precision);
+	_value = roundf(value * (1 << _precision));
 	std::cout << "Float constructor called" << std::endl;
 }
 
@@ -54,59 +54,89 @@ void	Fixed::setRawBits( int const raw ) {
 }
 
 float	Fixed::toFloat( void ) const {
-	return (float)_value / (float)(1 << _precision);
+	return ((float)_value / (float)(1 << _precision));
 }
 
 int		Fixed::toInt( void ) const {
-	return _value >> _precision;
+	return (_value >> _precision);
 }
 
-bool	Fixed::operator == ( Fixed const & other ) {
+bool	Fixed::operator == ( Fixed const & other ) const {
 	return (_value == other._value);
 }
 
-bool	Fixed::operator != ( Fixed const & other ) {
+bool	Fixed::operator != ( Fixed const & other ) const {
 	return (_value != other._value);
 }
 
-bool	Fixed::operator < ( Fixed const & other ) {
+bool	Fixed::operator < ( Fixed const & other ) const {
 	return (_value < other._value);
 }
 
-bool	Fixed::operator > ( Fixed const & other ) {
+bool	Fixed::operator > ( Fixed const & other ) const {
 	return (_value > other._value);
 }
 
-bool	Fixed::operator <= ( Fixed const & other ) {
+bool	Fixed::operator <= ( Fixed const & other ) const {
 	return (_value <= other._value);
 }
 
-bool	Fixed::operator >= ( Fixed const & other ) {
+bool	Fixed::operator >= ( Fixed const & other ) const {
 	return (_value >= other._value);
 }
 
-Fixed&	Fixed::operator + ( Fixed const & other ) {
-	return (this->toFloat() + other.toFloat());
+Fixed	Fixed::operator + ( Fixed const & other ) {
+	Fixed fx;
+	fx.setRawBits(_value + other._value);
+	return (fx);
 }
 
-Fixed&	Fixed::operator - ( Fixed const & other ) {
-	return (this->toFloat() - other.toFloat());
+Fixed	Fixed::operator - ( Fixed const & other ) {
+	Fixed fx;
+	fx.setRawBits(_value - other._value);
+	return (fx);
 }
 
-Fixed&	Fixed::operator * ( Fixed const & other ) {
-	return (this->toFloat() * other.toFloat());
+Fixed	Fixed::operator * ( Fixed const & other ) {
+	Fixed fx;
+	fx.setRawBits((_value * other._value) / (1 << _precision));
+	return (fx);
 }
 
-Fixed&	Fixed::operator / ( Fixed const & other ) {
-	return (this->toFloat() / other.toFloat());
+Fixed	Fixed::operator / ( Fixed const & other ) {
+	Fixed fx;
+	fx.setRawBits((_value * (1 << _precision)) / (other._value));
+	return (fx);
 }
 
 Fixed&	Fixed::operator ++ () {
-	
+	_value++;
+	return (*this);
 }
 
-Fixed&	Fixed::operator ++ (int) {
-	
+Fixed	Fixed::operator ++ (int) {
+	Fixed fx(*this);
+	_value++;
+	return (fx);
+}
+
+Fixed&	Fixed::operator -- () {
+	_value--;
+	return (*this);
+}
+
+Fixed	Fixed::operator -- (int) {
+	Fixed fx(*this);
+	_value--;
+	return (fx);
+}
+
+Fixed const &	Fixed::min( Fixed const & f1, Fixed const & f2 ) {
+	return (f1 > f2) ? f2 : f1;
+}
+
+Fixed const &	Fixed::max( Fixed const & f1, Fixed const & f2 ) {
+	return (f1 < f2) ? f2 : f1;
 }
 
 

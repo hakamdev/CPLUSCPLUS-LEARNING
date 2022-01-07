@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 02:11:28 by ehakam            #+#    #+#             */
-/*   Updated: 2021/12/29 02:54:26 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/01/07 01:59:57 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Fixed::Fixed( int value ) {
 }
 
 Fixed::Fixed( float value ) {
-	_value = value * (float)(1 << _precision);
+	_value = roundf(value * (1 << _precision));
 	std::cout << "Float constructor called" << std::endl;
 }
 
