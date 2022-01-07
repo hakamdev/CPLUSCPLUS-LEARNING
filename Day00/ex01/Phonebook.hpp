@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 17:45:11 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/12/27 20:28:11 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/01/07 03:06:20 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ class Phonebook {
 		void	printField( std::string field );
 		void	addContact( void );
 		void	searchContact( void );
+		void	printContactTable( void );
+		bool	checkIndex( std::string index );
+		void	printContactInfo(Contact contact);
 
 	public:
 		Phonebook( void );

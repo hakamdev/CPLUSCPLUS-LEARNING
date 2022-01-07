@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 17:45:14 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/12/27 20:27:49 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/01/07 03:07:50 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
+#include <sstream>
 
 void	clearTerminal() {
 	/* 
@@ -29,31 +30,56 @@ Phonebook::~Phonebook( void ) {
 	
 }
 
-void	Phonebook::run( void ) {
-	std::string command;
-
-	while (true)
-	{
-		std::cout << "Please, Enter Command: <ADD, SEARCH, EXIT>" << std::endl;
-		std::cout << "> ";
-		getline(std::cin, command);
-		if (command == "EXIT")
-			break ;
-		else if (command == "ADD")
-			this->addContact();
-		else if (command == "SEARCH")
-			this->searchContact();
-		else
-			clearTerminal();
-	}
-}
-
 void	Phonebook::printField( std::string field ) {
 	if (field.length() <= 10) {
 		std::cout << std::setw(10) << field;
 	} else {
 		std::cout<< field.substr(0, 9) << ".";
 	}
+}
+
+bool	Phonebook::checkIndex(std::string index) {
+	unsigned long i = 0;
+
+	while (index[i] == ' ') i++;
+	while (index[i] >= '0' && index[i] <= '9') i++;
+	while (index[i] == ' ') i++;
+	if (i != index.size())
+		return (false);
+	return (true);
+}
+
+void	Phonebook::printContactInfo(Contact contact) {
+	clearTerminal();
+	std::cout << "First Name:      " << contact.getFirstName() << std::endl;
+	std::cout << "Last Name:       " << contact.getLastName() << std::endl;
+	std::cout << "Nickname:        " << contact.getNickname() << std::endl;
+	std::cout << "Phone Number:    " << contact.getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret:  " << contact.getDarkestSecret() << std::endl << std::endl;
+}
+
+void	Phonebook::printContactTable( void ) {
+	int		index = 0;
+
+	clearTerminal();
+	std::cout << "List Of Contacts" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
+	while (index < numContacts)
+	{
+		std::cout << "|";
+		std::cout << std::setw(10) << index;
+		std::cout << "|";
+		printField(contacts[index].getFirstName());
+		std::cout << "|";
+		printField(contacts[index].getLastName());
+		std::cout << "|";
+		printField(contacts[index].getNickname());
+		std::cout << "|" << std::endl;
+		index++;
+	}
+	std::cout << "---------------------------------------------" << std::endl;
 }
 
 void	Phonebook::addContact( void ) {
@@ -89,56 +115,19 @@ void	Phonebook::addContact( void ) {
 	std::cout << "Contact Added Successfully!" << std::endl << std::endl;
 }
 
-bool	checkIndex(std::string index) {
-	unsigned long i = 0;
-
-	while (index[i] == ' ') i++;
-	while (index[i] >= '0' && index[i] <= '9') i++;
-	while (index[i] == ' ') i++;
-	if (i != index.size())
-		return (false);
-	return (true);
-}
-
-void	printContactInfo(Contact contact) {
-	clearTerminal();
-	std::cout << "First Name:      " << contact.getFirstName() << std::endl;
-	std::cout << "Last Name:       " << contact.getLastName() << std::endl;
-	std::cout << "Nickname:        " << contact.getNickname() << std::endl;
-	std::cout << "Phone Number:    " << contact.getPhoneNumber() << std::endl;
-	std::cout << "Darkest Secret:  " << contact.getDarkestSecret() << std::endl << std::endl;
-}
-
 void	Phonebook::searchContact( void ) {
 	int		index = 0;
 	std::string	_index;
 
-	clearTerminal();
-	std::cout << "List Of Contacts" << std::endl;
-	std::cout << "---------------------------------------------" << std::endl;
-	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
-	std::cout << "---------------------------------------------" << std::endl;
-	while (index < numContacts)
-	{
-		std::cout << "|";
-		std::cout << std::setw(10) << index;
-		std::cout << "|";
-		printField(contacts[index].getFirstName());
-		std::cout << "|";
-		printField(contacts[index].getLastName());
-		std::cout << "|";
-		printField(contacts[index].getNickname());
-		std::cout << "|" << std::endl;
-		index++;
-	}
-	std::cout << "---------------------------------------------" << std::endl;
+	printContactTable();
 	std::cout << "Enter Index: ";
 	getline(std::cin, _index);
 	if (!checkIndex(_index)) {
 		std::cout << "Invalid Index!" << std::endl;
 		return;
 	}
-	std::stringstream	s(_index);
+	std::stringstream	s;
+	s << _index;
 	s >> index;
 	if (!(index >= 0 && index <= currentIndex)) {
 		std::cout << "Index outside of range (0 - " << currentIndex << ")!" << std::endl; 
@@ -147,4 +136,23 @@ void	Phonebook::searchContact( void ) {
 	clearTerminal();
 	std::cout << "Displaying Contact Info Index: " << index << std::endl;
 	printContactInfo(contacts[index]);
+}
+
+void	Phonebook::run( void ) {
+	std::string command;
+
+	while (true)
+	{
+		std::cout << "Please, Enter Command: <ADD, SEARCH, EXIT>" << std::endl;
+		std::cout << "> ";
+		getline(std::cin, command);
+		if (command == "EXIT")
+			break ;
+		else if (command == "ADD")
+			this->addContact();
+		else if (command == "SEARCH")
+			this->searchContact();
+		else
+			clearTerminal();
+	}
 }
