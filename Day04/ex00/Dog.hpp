@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/07 05:31:01 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/15 18:06:09 by ehakam           ###   ########.fr       */
+/*   Created: 2022/01/15 17:45:09 by ehakam            #+#    #+#             */
+/*   Updated: 2022/01/15 18:26:56 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include <iostream>
+#ifndef __DOG_HPP__
+# define __DOG_HPP__
 
-int main() {
-	const Animal* meta = new Animal();
-	const Animal* dog = new Dog();
-	const Animal* cat = new Cat();
-	std::cout << dog->getType() << " " << std::endl;
-	std::cout << cat->getType() << " " << std::endl;
-	cat->makeSound(); //will output the cat sound!
-	dog->makeSound();
-	meta->makeSound();
+# include "Animal.hpp"
 
-	return (0);
-}
+class Dog : public Animal {
+	public:
+		Dog( void );
+		Dog( Dog const & copy );
+		Dog&	operator = ( Dog const & copy );
+		~Dog( void );
+		virtual void	makeSound( void ) const;
+};
+
+#endif /* __DOG_HPP__ */
