@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   main_deep_cpy.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/07 05:31:01 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/15 19:41:40 by ehakam           ###   ########.fr       */
+/*   Created: 2022/01/15 19:34:27 by ehakam            #+#    #+#             */
+/*   Updated: 2022/01/15 19:37:06 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,13 @@
 #include "Cat.hpp"
 #include <iostream>
 
-int main() {
+int main( void ) {
+	
+	Animal *a = new Dog();
+	Animal *b = new Cat();
 
-	std::cout << "TEST 1" << std::endl;
-
-	Animal* animals[4];
-
-	for(int i = 0; i < 4; i++) {
-		if (i < 2)
-			animals[i] = new Cat();
-		else
-			animals[i] = new Dog();
-	}
-
-	for(int i = 0; i < 4; i++) {
-		animals[i]->makeSound();
-	}
-
-	for(int i = 0; i < 4; i++) {
-		delete animals[i];
-	}
-
-	std::cout << std::endl << std::endl << "TEST 2" << std::endl;
-
-	const Dog a;
-	const Cat b;
-
-	const Dog c(a);
-	const Cat d(b);
+	Animal *c = new Dog(a);
+	Animal *d = new Cat(b);
 
 	return (0);
 }
