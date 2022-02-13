@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:54:42 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/15 19:20:28 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/13 23:45:16 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
-#include <iostream>
 
 Cat::Cat( void ) : Animal("Cat") {
 	std::cout << "Cat: Constructor called!" << std::endl;
 	this->type = type;
 	this->brain = new Brain();
 }
+
 Cat::Cat ( Cat const & copy ) : Animal(copy) {
 	std::cout << "Cat: Copy Constructor called!" << std::endl;
 	*this = copy;
@@ -26,7 +26,7 @@ Cat::Cat ( Cat const & copy ) : Animal(copy) {
 Cat&	Cat::operator = ( Cat const & copy ) {
 	std::cout << "Cat: = operator called!" << std::endl;
 	this->type = copy.type;
-	this->brain = copy.brain;
+	this->brain = new Brain(*copy.brain);
 	return (*this);
 }
 
@@ -35,6 +35,10 @@ Cat::~Cat( void ) {
 	delete this->brain;
 }
 
-void		Cat::makeSound( void ) const {
+void	Cat::makeSound( void ) const {
 	std::cout << "Moew Moew!!" << std::endl;
+}
+
+Brain&	Cat::getBrain( void ) const {
+	return (*this->brain);
 }

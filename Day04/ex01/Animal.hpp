@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 05:34:13 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/15 19:12:50 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/13 22:53:24 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __ANIMAL_HPP__
 
 # include <string>
+# include <iostream>
 
 class Animal {
 	protected:

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 05:38:20 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/15 18:10:41 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/13 23:12:49 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include <iostream>
 
 Animal::Animal( void ) : type("Animal") {
 	std::cout << "Animal: Constructor called!" << std::endl;
@@ -22,7 +21,7 @@ Animal::Animal( std::string type ) {
 	this->type = type;
 }
 
-Animal::Animal ( Animal const & copy ) {
+Animal::Animal( Animal const & copy ) {
 	std::cout << "Animal: Copy Constructor called!" << std::endl;
 	*this = copy;
 }
@@ -38,15 +37,13 @@ Animal::~Animal( void ) {
 }
 
 std::string	Animal::getType( void ) const {
-	// std::cout << "Animal: getType called!" << std::endl;
 	return type;
 }
 
-void		Animal::setType( std::string type ) {
-	std::cout << "Animal: setType called!" << std::endl;
+void	Animal::setType( std::string type ) {
 	this->type = type;
 }
 
-void		Animal::makeSound( void ) const {
+void	Animal::makeSound( void ) const {
 	std::cout << "Animal sounds!!" << std::endl;
 }

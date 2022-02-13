@@ -3,21 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 18:01:26 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/15 19:21:05 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/13 23:49:09 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
-#include <iostream>
 
 Dog::Dog( void ) : Animal("Dog") {
 	std::cout << "Dog: Constructor called!" << std::endl;
-	this->type = type;
 	this->brain = new Brain();
 }
+
 Dog::Dog ( Dog const & copy ) : Animal(copy) {
 	std::cout << "Dog: Copy Constructor called!" << std::endl;
 	*this = copy;
@@ -26,7 +25,7 @@ Dog::Dog ( Dog const & copy ) : Animal(copy) {
 Dog&	Dog::operator = ( Dog const & copy ) {
 	std::cout << "Dog: = operator called!" << std::endl;
 	this->type = copy.type;
-	this->brain = copy.brain;
+	this->brain = new Brain(*copy.brain);
 	return (*this);
 }
 
@@ -35,6 +34,10 @@ Dog::~Dog( void ) {
 	delete this->brain;
 }
 
-void		Dog::makeSound( void ) const {
+void	Dog::makeSound( void ) const {
 	std::cout << "Haw Haw hhh!!" << std::endl;
+}
+
+Brain&	Dog::getBrain( void ) const {
+	return (*this->brain);
 }

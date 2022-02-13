@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:45:09 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/15 19:27:27 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/13 23:43:56 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "Animal.hpp"
 # include "Brain.hpp"
+# include <iostream>
 
 class Dog : public Animal {
 	private:
@@ -26,6 +27,7 @@ class Dog : public Animal {
 		Dog&	operator = ( Dog const & copy );
 		virtual ~Dog( void );
 		virtual void	makeSound( void ) const;
+		Brain&			getBrain( void ) const;
 };
 
 #endif /* __DOG_HPP__ */
