@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:45:09 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/14 00:22:05 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/14 01:21:21 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class Dog : public AAnimal {
 		virtual ~Dog( void );
 		virtual void	makeSound( void ) const;
 		Brain&			getBrain( void ) const;
-		virtual std::string	getType( void ) const;
-		virtual void		setType( std::string type );
+		// virtual std::string	getType( void ) const;
+		// virtual void		setType( std::string type );
 };
 
 #endif /* __DOG_HPP__ */

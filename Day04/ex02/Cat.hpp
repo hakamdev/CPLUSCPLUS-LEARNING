@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:52:22 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/14 00:33:28 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/14 01:21:16 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class Cat : public AAnimal {
 		virtual ~Cat( void );
 		virtual void	makeSound( void ) const;
 		Brain&			getBrain( void ) const;
-		virtual std::string	getType( void ) const;
-		virtual void	setType( std::string type );
+		// virtual std::string	getType( void ) const;
+		// virtual void	setType( std::string type );
 };
 
 #endif /* __CAT_HPP__ */

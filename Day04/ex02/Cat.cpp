@@ -6,19 +6,18 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:54:42 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/14 00:59:07 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/14 01:20:57 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat( void ) {
+Cat::Cat( void ) : AAnimal("Cat") {
 	std::cout << "Cat: Constructor called!" << std::endl;
-	this->type = "Cat";
 	this->brain = new Brain();
 }
 
-Cat::Cat ( Cat const & copy ) {
+Cat::Cat ( Cat const & copy ) : AAnimal(copy) {
 	std::cout << "Cat: Copy Constructor called!" << std::endl;
 	*this = copy;
 }
@@ -43,10 +42,10 @@ Brain&	Cat::getBrain( void ) const {
 	return (*this->brain);
 }
 
-void	Cat::setType( std::string type ) {
-	this->type = type;
-}
+// void	Cat::setType( std::string type ) {
+// 	this->type = type;
+// }
 
-std::string	Cat::getType( void ) const {
-	return type;
-}
+// std::string	Cat::getType( void ) const {
+// 	return type;
+// }

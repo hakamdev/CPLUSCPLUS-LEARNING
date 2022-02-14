@@ -6,19 +6,18 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 18:01:26 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/14 00:38:09 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/14 01:20:23 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog( void ) {
+Dog::Dog( void ) : AAnimal("Dog") {
 	std::cout << "Dog: Constructor called!" << std::endl;
-	this->type = "Dog";
 	this->brain = new Brain();
 }
 
-Dog::Dog ( Dog const & copy ) {
+Dog::Dog ( Dog const & copy ) : AAnimal(copy) {
 	std::cout << "Dog: Copy Constructor called!" << std::endl;
 	*this = copy;
 }
@@ -43,10 +42,10 @@ Brain&	Dog::getBrain( void ) const {
 	return (*this->brain);
 }
 
-void	Dog::setType( std::string type ) {
-	this->type = type;
-}
+// void	Dog::setType( std::string type ) {
+// 	this->type = type;
+// }
 
-std::string	Dog::getType( void ) const {
-	return type;
-}
+// std::string	Dog::getType( void ) const {
+// 	return type;
+// }
