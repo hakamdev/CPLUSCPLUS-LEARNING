@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/18 18:31:37 by ehakam            #+#    #+#              #
-#    Updated: 2022/02/15 13:27:54 by ehakam           ###   ########.fr        #
+#    Created: 2022/02/15 15:56:48 by ehakam            #+#    #+#              #
+#    Updated: 2022/02/15 15:57:28 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror
-NAME	=	phonebook
-SRCS	=	Contact.cpp Phonebook.cpp program.cpp
+NAME	=	logger
+SRCS	=	Account.cpp tests.cpp
 
 all: $(NAME)
 

@@ -5,16 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/28 17:09:06 by hakamgo           #+#    #+#             */
-/*   Updated: 2022/01/07 03:12:35 by ehakam           ###   ########.fr       */
+/*   Created: 2021/07/28 17:09:06 by ehakam            #+#    #+#             */
+/*   Updated: 2022/02/15 16:35:59 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <ctime>
-#include <stdio.h>
 #include <iostream>
-# include <iomanip>
+#include <iomanip>
 
 Account::Account( int initial_deposit ) :
 	_accountIndex(Account::_nbAccounts++),
@@ -66,7 +65,7 @@ bool	Account::makeWithdrawal( int withdrawal ) {
 		Account::_displayTimestamp();
 		std::cout	<< " index:" << _accountIndex << ';'
 					<< "amount:" << _amount << ';'
-					<< "withdrawal:" << "refused" << ';'
+					<< "withdrawal:" << "refused"
 					<< std::endl;
 		return (false);
 	}
@@ -79,9 +78,9 @@ bool	Account::makeWithdrawal( int withdrawal ) {
 				<< "amount:" << _prev_amount << ';'
 				<< "withdrawal:" << withdrawal << ';'
 				<< "amount:" << _amount << ';'
-				<< "nb_withdrawals" << _nbWithdrawals << ';'
+				<< "nb_withdrawals:" << _nbWithdrawals
 				<< std::endl;
-	return true;
+	return (true);
 }
 
 int		Account::checkAmount( void ) const {
@@ -133,7 +132,6 @@ void	Account::displayAccountsInfos( void ) {
 void	Account::_displayTimestamp( void ) {
 	time_t		ttime;
 	struct tm	*tm;
-	char		timestamp_str[20];
 
 	time(&ttime);
 	tm = localtime(&ttime);
