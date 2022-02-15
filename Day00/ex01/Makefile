@@ -6,11 +6,11 @@
 #    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/18 18:31:37 by ehakam            #+#    #+#              #
-#    Updated: 2022/02/15 13:27:54 by ehakam           ###   ########.fr        #
+#    Updated: 2022/02/15 18:08:31 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		=	clang++
+CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror
 NAME	=	phonebook
 SRCS	=	Contact.cpp Phonebook.cpp program.cpp

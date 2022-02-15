@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:25:55 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/15 19:31:30 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/15 20:22:57 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main( void ) {
 	Bureaucrat b2(b1);
 	Bureaucrat b3("John Snow", 150);
 	Bureaucrat b4 = b3;
-	
+	std::cout << std::endl;
 	std::cout << b2.getName() << " grade = " << b2.getGrade() << " before decrement!" << std::endl;
 	b2.decrement();
 	std::cout << b2.getName() << " grade = " << b2.getGrade() << " after decrement!" << std::endl;
@@ -32,26 +32,24 @@ int	main( void ) {
 	// Operations that throw exception
 	std::cout << std::endl << "*** THERE SHOULD THROW AN EXCEPTION ***" << std::endl;
 	try {
-		Bureaucrat b5("Too Hight Gentleman", 0);
-		Bureaucrat b6("Too Low Gentleman", 160);
+		Bureaucrat b5("Too High Gentleman", 0);
 	} catch (Bureaucrat::GradeTooHighException& e) {
 		std::cout << e << std::endl;
+	}
+	try {
+		Bureaucrat b6("Too Low Gentleman", 160);
 	} catch (Bureaucrat::GradeTooLowException& e) {
 		std::cout << e << std::endl;
-	} catch (std::exception& e) {
-		std::cout << e.what() << std::endl;
 	}
-	
 	try {
 		b1.increment();
-		b3.decrement();
 	} catch (Bureaucrat::GradeTooHighException& e) {
 		std::cout << e << std::endl;
+	}
+	try {
+		b3.decrement();
 	} catch (Bureaucrat::GradeTooLowException& e) {
 		std::cout << e << std::endl;
-	} catch (std::exception& e) {
-		std::cout << e.what() << std::endl;
 	}
-	
 	return (0);
 }

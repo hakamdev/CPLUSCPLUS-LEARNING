@@ -6,11 +6,11 @@
 #    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/07 05:29:40 by ehakam            #+#    #+#              #
-#    Updated: 2022/02/13 23:48:21 by ehakam           ###   ########.fr        #
+#    Updated: 2022/02/15 18:10:07 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		=	clang++
+CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror
 NAME	=	poly_test
 SRCS	=	main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp

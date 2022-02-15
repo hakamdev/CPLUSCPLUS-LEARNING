@@ -6,11 +6,11 @@
 #    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/07 02:02:23 by ehakam            #+#    #+#              #
-#    Updated: 2022/01/07 02:16:29 by ehakam           ###   ########.fr        #
+#    Updated: 2022/02/15 18:10:07 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		=	clang++
+CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 NAME	=	fixed_test
 SRCS	=	Fixed.cpp main.cpp

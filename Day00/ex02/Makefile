@@ -6,11 +6,11 @@
 #    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/15 15:56:48 by ehakam            #+#    #+#              #
-#    Updated: 2022/02/15 15:57:28 by ehakam           ###   ########.fr        #
+#    Updated: 2022/02/15 18:08:35 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		=	clang++
+CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror
 NAME	=	logger
 SRCS	=	Account.cpp tests.cpp

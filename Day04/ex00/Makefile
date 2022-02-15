@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+         #
+#    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/07 05:29:40 by ehakam            #+#    #+#              #
-#    Updated: 2022/01/15 18:39:54 by ehakam           ###   ########.fr        #
+#    Updated: 2022/02/15 18:10:07 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		=	clang++
+CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror
 NAME	=	poly_test
 SRCS	=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp

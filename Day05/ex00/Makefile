@@ -6,13 +6,13 @@
 #    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/15 18:19:20 by ehakam            #+#    #+#              #
-#    Updated: 2022/02/15 18:21:06 by ehakam           ###   ########.fr        #
+#    Updated: 2022/02/15 20:01:16 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror
-NAME	=	poly_test
+NAME	=	exception_test
 SRCS	=	main.cpp Bureaucrat.cpp
 
 all: $(NAME)

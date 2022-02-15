@@ -6,11 +6,11 @@
 #    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/07 03:29:36 by ehakam            #+#    #+#              #
-#    Updated: 2022/01/07 03:36:13 by ehakam           ###   ########.fr        #
+#    Updated: 2022/02/15 18:10:07 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		=	clang++
+CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror
 NAME	=	test
 SRCS	=	ClapTrap.cpp ScavTrap.cpp main.cpp
