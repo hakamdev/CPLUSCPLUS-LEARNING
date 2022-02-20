@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:33:56 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/16 19:51:38 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/20 23:25:36 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,26 @@
 #include <iostream>
 
 // FORM
-Form::Form( std::string name, int signGrade, int execGrade ) : _name(name), _isSigned(false) {
-	std::cout << "Form: Custom Constructor called!" << std::endl;
+Form::Form( std::string name, int signGrade, int execGrade ) :
+					_name(name), _isSigned(false), _signGrade(signGrade), _execGrade(execGrade) {
+	std::cout << "Form:  Constructor called!" << std::endl;
 	if (signGrade > 150 || execGrade > 150)
 		throw Form::GradeTooLowException(this->_name);
 	else if (signGrade < 1 || execGrade < 1)
 		throw Form::GradeTooHighException(this->_name);
-	this->_execGrade = execGrade;
-	this->_signGrade = signGrade;
+	// this->_execGrade = execGrade;
+	// this->_signGrade = signGrade;
 }
-Form::Form( Form const & copy ) {
+Form::Form( Form const & copy ) :
+					_name(copy._name), _signGrade(copy._signGrade), _execGrade(copy._execGrade) {
 	std::cout << "Form: Copy Constructor called!" << std::endl;
 	*this = copy;
 }
 Form& Form::operator = ( Form const & copy ) {
 	std::cout << "Form: = operator called!" << std::endl;
-	this->_name = copy._name;
-	this->_signGrade = copy._signGrade;
-	this->_execGrade = copy._execGrade;
+	// this->_name = copy._name;
+	// this->_signGrade = copy._signGrade;
+	// this->_execGrade = copy._execGrade;
 	this->_isSigned = copy._isSigned;
 	return (*this);
 }
@@ -74,9 +76,9 @@ std::ostream&	operator << (std::ostream &os, const Form &f)
 
 // EXCEPTIONS
 Form::GradeTooHighException::GradeTooHighException( void ) {}
-Form::GradeTooHighException::~GradeTooHighException( void ) throw () {}
+Form::GradeTooHighException::~GradeTooHighException( void ) throw() {}
 Form::GradeTooLowException::GradeTooLowException( void ) {}
-Form::GradeTooLowException::~GradeTooLowException( void ) throw () {}
+Form::GradeTooLowException::~GradeTooLowException( void ) throw() {}
 Form::GradeTooHighException::GradeTooHighException( std::string name )
 	: _thower_name(name) {}
 Form::GradeTooLowException::GradeTooLowException( std::string name )

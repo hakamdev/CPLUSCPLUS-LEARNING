@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:25:50 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/16 19:37:32 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/20 23:37:28 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Bureaucrat {
 		int			getGrade() const;
 		void		increment( void );
 		void		decrement( void );
-		void		signForm( Form const & f );
+		void		signForm( Form & f );
 	class GradeTooHighException : public std::exception {
 		private:
 			std::string _thower_name;

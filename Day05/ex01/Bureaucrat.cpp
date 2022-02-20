@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:25:52 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/16 19:36:57 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/20 23:42:08 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 
 Bureaucrat::Bureaucrat( std::string const name, int grade ) : _name(name) {
-	std::cout << "Bureaucrat: Custom Constructor called!" << std::endl;
+	std::cout << "Bureaucrat:  Constructor called!" << std::endl;
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException(this->_name);
 	else if (grade < 1)
@@ -59,15 +59,21 @@ void		Bureaucrat::decrement( void ) {
 	this->_grade++;
 }
 
-void		Bureaucrat::signForm( Form const & f ) {
-	if (this->_grade > f.getSignGrade())
+void		Bureaucrat::signForm( Form & f ) {
+	if (f.isSigned()) {
 		std::cout << this->_name
 				<< " couldn't sign " << f.getName()
-				<< " because bureaucrat's grade is not enough!" << std::endl;
-	else
+				<< " because: it's already been signed!" << std::endl;
+	}
+	try {
+		f.beSigned(*this);
 		std::cout << this->_name << " signed " << f.getName() << std::endl;
+	} catch (std::exception& e) {
+		std::cout << this->_name
+				<< " couldn't sign " << f.getName()
+				<< " because: " << e.what() << std::endl;
+	}
 }
-
 
 std::ostream&	operator << (std::ostream &os, const Bureaucrat &b)
 {

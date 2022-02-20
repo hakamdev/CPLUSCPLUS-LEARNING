@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:25:50 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/16 19:37:28 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/17 18:20:40 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 class Bureaucrat {
 	private:
-		std::string	_name;
-		int			_grade;
+		std::string	const	_name;
+		int					_grade;
 	public:
 		Bureaucrat( std::string const name, int grade );
 		Bureaucrat( Bureaucrat const & copy );

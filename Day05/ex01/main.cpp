@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:25:55 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/16 19:49:00 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/21 00:33:23 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	main( void ) {
 	// Operations that throw exception //
 	std::cout << std::endl << "*** THESE SHOULD THROW AN EXCEPTION ***" << std::endl;
 
+	b2.signForm(f4);
+
 	try {
 		Form ff("FormF", 160, 170);
 	} catch (std::exception& e) {
@@ -45,12 +47,6 @@ int	main( void ) {
 
 	try {
 		Form ff2("FormF2", 0, -1);
-	} catch (std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
-
-	try {
-		f4.beSigned(b2);
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}

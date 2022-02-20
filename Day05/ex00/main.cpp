@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:25:55 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/16 19:48:49 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/17 18:25:12 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main( void ) {
 	Bureaucrat b1("Jack", 1);
 	Bureaucrat b2(b1);
 	Bureaucrat b3("John Snow", 150);
-	Bureaucrat b4 = b3;
+	Bureaucrat b4("Lady Brian", 150);
 	std::cout << std::endl;
 	std::cout << b2 << "\t\t(before decrement)" << std::endl;
 	b2.decrement();
