@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 13:16:57 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/12/29 01:14:42 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/21 20:07:23 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ Karen::~Karen( void ) {
 }
 
 void	Karen::complain( std::string level ) {
+	void	(Karen::*funPtr)( void );
 	funPtr = nullptr;
 	level.compare("DEBUG") == 0 && (funPtr = &Karen::debug);
 	level.compare("INFO") == 0 && (funPtr = &Karen::info);
@@ -61,7 +62,7 @@ void	Karen::info( void ) {
 	std::cout	<< CBlACK << BGCYAN
 			<< "Info:" << std::endl
 			<< CRESET << CCYAN
-			<< "I cannot believe adding extra bacon cost more money.\nYou don’t put enough! If you did I would not have to ask for it!"
+			<< "I cannot believe adding extra bacon cost more money.\nYou don't put enough! If you did I would not have to ask for it!"
 			<< CRESET
 			<< std::endl;
 }
@@ -70,7 +71,7 @@ void	Karen::warning( void ) {
 	std::cout	<< BGYELLOW << CBlACK
 			<< "Warning:" << std::endl
 			<< CRESET << CYELLOW
-			<< "I think I deserve to have some extra bacon for free.\nI’ve been coming here for years and you just started working here last month."
+			<< "I think I deserve to have some extra bacon for free.\nI've been coming here for years and you just started working here last month."
 			<< CRESET
 			<< std::endl;
 }

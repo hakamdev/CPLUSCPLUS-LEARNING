@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 17:33:20 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/12/29 01:28:47 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/21 20:08:43 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ Karen::~Karen( void ) {
 }
 
 void	Karen::complain( std::string level ) {
+	void	(Karen::*funPtr)( void );
 	funPtr = nullptr;
 	level.compare("DEBUG") == 0 && (funPtr = &Karen::debug);
 	level.compare("INFO") == 0 && (funPtr = &Karen::info);

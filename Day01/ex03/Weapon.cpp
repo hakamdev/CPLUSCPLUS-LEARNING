@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 18:35:17 by hakamgo           #+#    #+#             */
-/*   Updated: 2022/02/21 19:25:43 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/21 19:56:55 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 Weapon::Weapon( std::string type ): _type(type) {
 	std::cout << "Weapon: " << this->_type << " created!" << std::endl;
+}
+
+Weapon::Weapon( Weapon const & copy ) {
+	this->_type = copy._type;
+	std::cout << "Weapon: " << this->_type << " Copied!" << std::endl;
 }
 
 Weapon::Weapon( void ) {

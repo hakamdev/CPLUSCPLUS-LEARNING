@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hakamgo <hakamgo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 13:16:54 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/07/30 17:33:50 by hakamgo          ###   ########.fr       */
+/*   Updated: 2022/02/21 20:05:51 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class Karen {
 		void	info( void );
 		void	warning( void );
 		void	error( void );
-		void	(Karen::*funPtr)( void );
 	
 	public:
 		Karen( void );
