@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 18:38:02 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/12/29 02:45:10 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/21 22:37:49 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Fixed::~Fixed( void ) {
 }
 
 Fixed&	Fixed::operator = ( Fixed const & copy ) {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	this->_value = copy.getRawBits();
 	return (*this);
 }
