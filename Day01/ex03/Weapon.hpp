@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 18:30:12 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/12/29 01:08:17 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/21 19:04:04 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Weapon {
 		Weapon( std::string type );
 		Weapon( void );
 		~Weapon( void );
-		std::string&	getType( void );
-		void	setType( std::string type );
+		std::string const &	getType( void ) const;
+		void				setType( std::string type );
 };
 
 #endif /* __WEAPON_HPP__ */

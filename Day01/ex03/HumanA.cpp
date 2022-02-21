@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 20:03:54 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/12/29 01:02:06 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/21 19:07:58 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA( std::string name, Weapon& weapon ): _name(name), _weapon(weapon){
+HumanA::HumanA( std::string name, Weapon& weapon ): _name(name), _weapon(weapon) {
 	std::cout << "HumanA Created! " << std::endl;
 }
 
@@ -25,10 +25,10 @@ void	HumanA::attack( void ) {
 	std::cout << _name << " attacks with his " << _weapon.getType() << std::endl;
 }
 
-std::string&	HumanA::getName( void ) {
-	return (_name);
+std::string const &	HumanA::getName( void ) const {
+	return (this->_name);
 }
 
-Weapon&	HumanA::getWeapon( void ) {
-	return (_weapon);
+Weapon const &		HumanA::getWeapon( void ) const {
+	return (this->_weapon);
 }

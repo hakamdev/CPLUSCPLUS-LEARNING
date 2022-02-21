@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:20:46 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/12/29 00:58:16 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/21 18:33:29 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ class Zombie {
 		Zombie( std::string name );
 		~Zombie( void );
 		
-		std::string&	name( void );
-		
-		void	announce( void );
+		std::string	getName( void ) const;
+		void		setName( std::string name );
+		void		announce( void );
 };
 
 #endif /* __ZOMBIE_HPP__ */

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 20:25:52 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/12/29 01:03:16 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/21 19:16:19 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,18 @@ HumanB::~HumanB( void ) {
 	std::cout << "HumanA Destroyed!" << std::endl;
 }
 
-void	HumanB::attack( void ) {
-	// NAME attacks with his WEAPON_TYPE
-	std::cout << _name << " attacks with his " << _weapon->getType() << std::endl;
+void				HumanB::attack( void ) {
+	std::cout << this->_name << " attacks with his " << this->_weapon->getType() << std::endl;
 }
 
-Weapon*	HumanB::getWeapon( void ) {
-	return (_weapon);
+Weapon const &		HumanB::getWeapon( void ) const {
+	return (*this->_weapon);
 }
 
-void	HumanB::setWeapon( Weapon& weapon ) {
+void				HumanB::setWeapon( Weapon& weapon ) {
 	this->_weapon = &weapon;
 }
 
-std::string&	HumanB::name( void ) {
-	return (_name);
+std::string const &	HumanB::getName( void ) const {
+	return (this->_name);
 }
