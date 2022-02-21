@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 21:22:15 by hakamgo           #+#    #+#             */
-/*   Updated: 2021/12/29 01:12:24 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/21 19:34:33 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 #include <string>
 
 void	replace( std::string &line, std::string &query, std::string &substitution ) {
-	size_t	index;
+	size_t	_index;
 
-	index = line.find(query);
-	while (index != std::string::npos) {
-		line.erase(index, query.length());
-		line.insert(index, substitution);
-		index = line.find(query);
+	_index = line.find(query);
+	while (_index != std::string::npos) {
+		line.erase(_index, query.length());
+		line.insert(_index, substitution);
+		_index = line.find(query);
 	}
 }
 
 void	saveToNewFile(std::string &fileName, std::string &content) {
-	std::string oFileName = fileName + ".replace";
+	std::string _oFileName = fileName + ".replace";
 	std::ofstream ofs;
 	
-	ofs.open(oFileName);
+	ofs.open(_oFileName);
 	if (!ofs.is_open()) {
 		std::cout << "Error opening file!" << std::endl;
 		return;
@@ -39,21 +39,21 @@ void	saveToNewFile(std::string &fileName, std::string &content) {
 }
 
 void	readFileAndReplace( std::string &fileName, std::string &query, std::string &substitution ) {
-	std::ifstream	ifs(fileName);
-	std::string		newContent;
-	std::string		line;
+	std::ifstream	_ifs(fileName);
+	std::string		_newContent;
+	std::string		_line;
 
-	if (!ifs.is_open()) {
+	if (!_ifs.is_open()) {
 		std::cout << "Error opening file!" << std::endl;
-		return;
+		return ;
 	}
-	while(getline(ifs, line)) {
-		replace(line, query, substitution);
-		newContent += line;
-		newContent += "\n";
+	while(getline(_ifs, _line)) {
+		replace(_line, query, substitution);
+		_newContent += _line;
+		_newContent += "\n";
 	}
-	saveToNewFile(fileName, newContent);
-	ifs.close();
+	saveToNewFile(fileName, _newContent);
+	_ifs.close();
 }
 
 int		main( int ac, char **av ) {
@@ -62,10 +62,8 @@ int		main( int ac, char **av ) {
 		return (1);
 	}
 	std::string _iFileName = av[1];
-	std::string _oFileName = _iFileName + ".replace";
 	std::string _query = av[2];
 	std::string _substitution = av[3];
-	std::string _newContent;
 
 	readFileAndReplace(_iFileName, _query, _substitution);
 
