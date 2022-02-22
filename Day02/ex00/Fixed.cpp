@@ -6,25 +6,25 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 18:38:02 by hakamgo           #+#    #+#             */
-/*   Updated: 2022/02/21 22:37:49 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/22 19:51:32 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 
+Fixed::~Fixed( void ) {
+	std::cout << "Destructor called" << std::endl;
+}
+
 Fixed::Fixed( void ) {
-	_value = 0;
 	std::cout << "Default constructor called" << std::endl;
+	_value = 0;
 }
 
 Fixed::Fixed( Fixed const & copy ) {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
-}
-
-Fixed::~Fixed( void ) {
-	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed&	Fixed::operator = ( Fixed const & copy ) {
