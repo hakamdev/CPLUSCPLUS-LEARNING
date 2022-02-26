@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 02:58:10 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/22 20:10:25 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/02/24 22:27:27 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ Fixed	Fixed::operator * ( Fixed const & other ) {
 
 Fixed	Fixed::operator / ( Fixed const & other ) {
 	Fixed fx;
-	fx.setRawBits((_value * (1 << _precision)) / (other._value));
+	fx.setRawBits((_value << _precision) / other._value);
 	return (fx);
 }
 
