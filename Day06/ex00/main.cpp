@@ -3,95 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 02:35:36 by ehakam            #+#    #+#             */
-/*   Updated: 2022/03/04 20:35:39 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/03/10 03:28:39 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <sstream>
 #include <string>
+#include "converters.hpp"
+#include "type_checkers.hpp"
 
-bool isChar(std::string value) {
-    size_t i = 0;
-    if (value.length() == 1 && value[0] == ' ')
-        return (true);
-    while (i < value.length() && value[i] == ' ') ++i;
-    if (value[i] >= '0' && value[i] <= '9')
-        return (false);
-    ++i;
-    while (i < value.length() && value[i] == ' ') ++i;
-    return (i == value.length());
-}
-
-bool isInt(std::string value) {
-    size_t i = 0;
-    size_t prev_i;
-    while (i < value.length() && value[i] == ' ') ++i;
-    if (value[i] == '-' || value[i] == '+') ++i;
-    prev_i = i;
-    while (value[i] >= '0' && value[i] <= '9') ++i;
-    if (prev_i == i)
-        return (false);
-    while (i < value.length() && value[i] == ' ') ++i;
-    return (i == value.length());
-}
-
-bool isFloat(std::string value) {
-    size_t i = 0;
-    size_t prev_i;
-    while (i < value.length() && value[i] == ' ') ++i;
-    if (value[i] == '-' || value[i] == '+') ++i;
-    prev_i = i;
-    while (value[i] >= '0' && value[i] <= '9') ++i;
-    if (prev_i == i)
-        return (false);
-    if (value[i++] != '.')
-        return (false);
-    prev_i = i;
-    while (value[i] >= '0' && value[i] <= '9') ++i;
-    if (prev_i == i)
-        return (false);
-    if (value[i++] != 'f')
-        return (false);
-    while (i < value.length() && value[i] == ' ') ++i;
-    return (i == value.length());
-}
-
-bool isDouble(std::string value) {
-    size_t i = 0;
-    size_t prev_i;
-    while (i < value.length() && value[i] == ' ') ++i;
-    if (value[i] == '-' || value[i] == '+') ++i;
-    prev_i = i;
-    while (value[i] >= '0' && value[i] <= '9') ++i;
-    if (prev_i == i)
-        return (false);
-    if (value[i++] != '.')
-        return (false);
-    prev_i = i;
-    while (value[i] >= '0' && value[i] <= '9') ++i;
-    if (prev_i == i)
-        return (false);
-    while (i < value.length() && value[i] == ' ') ++i;
-    return (i == value.length());
+//  String helper function:
+//  - removes white spaces around arguments
+std::string trim(std::string value) {
+    if (value.length() == 0) return value;
+    size_t start_pos = 0;
+    size_t end_pos = value.length() - 1;
+    while (start_pos < value.length() - 1 && value[start_pos] == ' ')
+        ++start_pos;
+    while (end_pos > 0 && value[end_pos] == ' ')
+        --end_pos;
+    if (end_pos < start_pos) return std::string("");
+    return value.substr(start_pos, end_pos - start_pos + 1);
 }
 
 int main(int ac, char **av) {
-	if (ac < 2)
+	if (ac != 2) {
+        std::cerr << "Invalid Arguments!" << std::endl;
 		return (1);
-	std::string arg = av[1];
+    }
+	std::string arg = trim(av[1]);
 
     if (isChar(arg)) {
-        std::cout << "CHAR" << std::endl;
+        handleChar(arg);
     } else if (isInt(arg)) {
-        std::cout << "INT" << std::endl;
+        handleInt(arg);
     } else if (isFloat(arg)) {
-        std::cout << "FLOAT" << std::endl;
+        handleFloat(arg);
     } else if (isDouble(arg)) {
-        std::cout << "DOUBLE" << std::endl;
+        handleDouble(arg);
+    } else if (isNan(arg)) {
+        handleNan();
+    } else if (isPosInf(arg)) {
+        handlePosInf();
+    } else if (isNegInf(arg)) {
+        handleNegInf();
+    } else {
+        handleElse();
     }
     return (0);
 }
