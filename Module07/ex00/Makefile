@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/21 02:41:34 by ehakam            #+#    #+#              #
-#    Updated: 2022/03/12 00:04:51 by ehakam           ###   ########.fr        #
+#    Created: 2022/03/11 23:06:34 by ehakam            #+#    #+#              #
+#    Updated: 2022/03/12 00:06:16 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror
-NAME	=	cast_test
-SRCS	=	converters.cpp type_checkers.cpp main.cpp
+NAME	=	template_test
+SRCS	=	main.cpp
 
 all: $(NAME)
 

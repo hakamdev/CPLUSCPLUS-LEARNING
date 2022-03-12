@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:25:50 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/20 23:37:28 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/03/12 01:20:48 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Bureaucrat {
 		public:
 			GradeTooHighException( void );
 			GradeTooHighException( std::string name );
-			~GradeTooHighException( void ) _NOEXCEPT;
+			~GradeTooHighException( void ) throw ();
 			const char* what() const throw ();
 	};
 	class GradeTooLowException : public std::exception {
@@ -45,7 +45,7 @@ class Bureaucrat {
 			std::string _thower_name;
 		public:
 			GradeTooLowException( void );
-			~GradeTooLowException( void ) _NOEXCEPT;
+			~GradeTooLowException( void ) throw ();
 			GradeTooLowException( std::string name );
 			const char* what() const throw ();
 	};
