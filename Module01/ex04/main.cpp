@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 21:22:15 by hakamgo           #+#    #+#             */
-/*   Updated: 2022/02/21 19:34:33 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/03/16 15:16:35 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	replace( std::string &line, std::string &query, std::string &substitution )
 	while (_index != std::string::npos) {
 		line.erase(_index, query.length());
 		line.insert(_index, substitution);
-		_index = line.find(query);
+		_index = line.find(query, _index + query.length());
 	}
 }
 

@@ -6,13 +6,13 @@
 #    By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 23:06:34 by ehakam            #+#    #+#              #
-#    Updated: 2022/03/14 05:04:24 by ehakam           ###   ########.fr        #
+#    Updated: 2022/03/25 02:57:06 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror
-NAME	=	template_test
+NAME	=	easyfind_test
 SRCS	=	main.cpp
 
 all: $(NAME)

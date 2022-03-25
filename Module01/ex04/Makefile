@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
+#    By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/29 21:38:22 by hakamgo           #+#    #+#              #
-#    Updated: 2022/02/15 18:09:16 by ehakam           ###   ########.fr        #
+#    Updated: 2022/03/16 14:42:36 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		=	c++
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -g
 NAME	=	replace_test
 SRCS	=	main.cpp
 
