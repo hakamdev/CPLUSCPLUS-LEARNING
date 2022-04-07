@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 02:58:10 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/24 22:27:27 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/04 21:22:55 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ Fixed::Fixed( Fixed const & copy ) {
 	*this = copy;
 }
 
-Fixed::Fixed( int value ) {
+Fixed::Fixed( int const value ) {
 	_value = value << _precision;
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed( float value ) {
+Fixed::Fixed( float const value ) {
 	_value = roundf(value * (1 << _precision));
 	std::cout << "Float constructor called" << std::endl;
 }

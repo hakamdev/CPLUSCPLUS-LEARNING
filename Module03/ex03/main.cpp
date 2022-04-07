@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 18:20:03 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/07 05:08:29 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/07 00:15:10 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@
 
 int		main(void) {
 	
-	DiamondTrap dt("Mosh");
+	std::cout << "======================= Diamond Constructors Tests =======================" << std::endl;
+	DiamondTrap dt("mosh");
+	DiamondTrap dt2( dt );
+
+	std::cout << std::endl << "======================= Diamond Methods Tests =======================" << std::endl;
 	dt.whoAmI();
 	dt.attack("Target");
 	dt.takeDamage(2);
@@ -27,6 +31,7 @@ int		main(void) {
 	dt.guardGate();
 	dt.highFivesGuys();
 
-	
+	std::cout << std::endl << "======================= Destructors =======================" << std::endl;
+
 	return (0);
 }

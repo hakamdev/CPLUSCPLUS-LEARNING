@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 18:20:13 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/07 04:16:29 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/06 23:01:14 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class ScavTrap : virtual public ClapTrap {
 
 	public:
+		ScavTrap( void );
 		ScavTrap( std::string name );
 		~ScavTrap( void );
 		ScavTrap( ScavTrap const & copy );

@@ -6,33 +6,27 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 16:37:41 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/07 05:27:23 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/07 00:26:04 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 #include <iostream>
 
-DiamondTrap::DiamondTrap( std::string name ) :
-						ClapTrap(name + "_clap_name"),
-						ScavTrap(name),
-						FragTrap(name) {
+DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_name") {
 	_name = name;
 	_hitPoints = FragTrap::_hitPoints;
 	_energyPoints = ScavTrap::_energyPoints;
 	_attackDamage = FragTrap::_attackDamage;
 }
 
-DiamondTrap::DiamondTrap( DiamondTrap const & copy ) :
-						ClapTrap(copy),
-						ScavTrap(copy),
-						FragTrap(copy) {
+DiamondTrap::DiamondTrap( DiamondTrap const & copy ) {
 	std::cout << "DiamondTrap: Copy Constructor called!" << std::endl;
 	*this = copy;
 }
 
 DiamondTrap::~DiamondTrap( void ) {
-
+	std::cout << "DiamondTrap: Destructor called!" << std::endl;
 }
 
 DiamondTrap&	DiamondTrap::operator = ( DiamondTrap const & copy ) {
@@ -49,6 +43,6 @@ void			DiamondTrap::attack( std::string const & target ) {
 }
 
 void			DiamondTrap::whoAmI( void ) {
-	std::cout << "Name: " << DiamondTrap::_name << std::endl;
-	std::cout << "ClapName: " << ClapTrap::_name << std::endl;
+	std::cout << "Name:     " << DiamondTrap::_name << std::endl;
+	std::cout << "ClapName: " << ClapTrap::_name << std::endl << std::endl;
 }

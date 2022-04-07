@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 15:55:19 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/07 04:15:42 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/06 23:44:45 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 class FragTrap : virtual public ClapTrap {
 	public:
+		FragTrap( void );
 		FragTrap( std::string name );
 		~FragTrap( void );
 		FragTrap( FragTrap const & copy );

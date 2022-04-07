@@ -6,15 +6,25 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 15:55:21 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/07 04:13:20 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/06 23:41:43 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <iostream>
 
-FragTrap::FragTrap( std::string name ) : ClapTrap(name, 100, 100, 30) {
-	std::cout << "FragTrap: Parameterized Constructor called!" << std::endl;
+FragTrap::FragTrap( void ) : ClapTrap() {
+	std::cout << "FragTrap: Default Constructor called!" << std::endl;
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
+}
+
+FragTrap::FragTrap( std::string name ) : ClapTrap(name) {
+	std::cout << "FragTrap: Constructor called!" << std::endl;
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 }
 
 FragTrap::~FragTrap( void ) {

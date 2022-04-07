@@ -6,15 +6,25 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 18:20:11 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/07 04:47:58 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/06 23:00:33 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include <iostream>
 
-ScavTrap::ScavTrap( std::string name ) : ClapTrap(name, 100, 50, 20) {
-	std::cout << "ScavTrap: Parameterized Constructor called!" << std::endl;
+ScavTrap::ScavTrap( void ) : ClapTrap() {
+	std::cout << "ScavTrap: Default Constructor called!" << std::endl;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
+}
+
+ScavTrap::ScavTrap( std::string name ) : ClapTrap(name) {
+	std::cout << "ScavTrap: Constructor called!" << std::endl;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap( ScavTrap const & copy ) : ClapTrap(copy) {
