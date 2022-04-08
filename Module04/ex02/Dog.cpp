@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 18:01:26 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/14 01:20:23 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/08 02:59:27 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,3 @@ void	Dog::makeSound( void ) const {
 Brain&	Dog::getBrain( void ) const {
 	return (*this->brain);
 }
-
-// void	Dog::setType( std::string type ) {
-// 	this->type = type;
-// }
-
-// std::string	Dog::getType( void ) const {
-// 	return type;
-// }

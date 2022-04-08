@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 05:31:01 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/14 00:03:03 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/08 02:53:31 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void test2() {
 	std::cout << GRE "[TEST 2] Deleting 'em mf Cats and Dogs!" RESET << std::endl;
 	for(int i = 0; i < 4; i++) {
 		delete animals[i];
-	}	
+	}
 }
 
 void test3() {

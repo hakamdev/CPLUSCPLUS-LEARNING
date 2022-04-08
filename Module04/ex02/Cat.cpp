@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:54:42 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/14 01:20:57 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/08 02:35:11 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,3 @@ void	Cat::makeSound( void ) const {
 Brain&	Cat::getBrain( void ) const {
 	return (*this->brain);
 }
-
-// void	Cat::setType( std::string type ) {
-// 	this->type = type;
-// }
-
-// std::string	Cat::getType( void ) const {
-// 	return type;
-// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:45:09 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/15 19:13:50 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/08 02:33:04 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Dog : public Animal {
 		Dog( void );
 		Dog( Dog const & copy );
 		Dog&	operator = ( Dog const & copy );
-		~Dog( void );
+		virtual ~Dog( void );
 		virtual void	makeSound( void ) const;
 };
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:52:22 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/15 19:13:46 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/08 02:33:17 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Cat : public Animal {
 		Cat( void );
 		Cat( Cat const & copy );
 		Cat&	operator = ( Cat const & copy );
-		~Cat( void );
+		virtual ~Cat( void );
 		virtual void	makeSound( void ) const;
 };
 

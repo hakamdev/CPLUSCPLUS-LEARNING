@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 20:05:16 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/20 23:22:37 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/08 22:11:50 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class ShrubberyCreationForm : public Form {
 	private:
 		std::string _target;
 	public:
+		ShrubberyCreationForm( void );
 		ShrubberyCreationForm( std::string target );
 		ShrubberyCreationForm( ShrubberyCreationForm const & copy );
 		ShrubberyCreationForm& operator = ( ShrubberyCreationForm const & copy );

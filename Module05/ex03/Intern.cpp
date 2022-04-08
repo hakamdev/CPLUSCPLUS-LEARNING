@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 00:37:45 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/21 02:10:12 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/08 21:49:27 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Form	*Intern::makeForm(std::string formName, std::string formTarget) {
 		return (this->*makers[makerIndex])(formTarget);
 	}
 	std::cout << "Form name <<" << formName << ">> is not recongnized!" << std::endl;
-	return (nullptr);
+	return (NULL);
 }
 
 Form	*Intern::makeShrubberyForm( std::string formTarget) {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 05:34:13 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/15 19:13:35 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/08 02:33:11 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 class Animal {
 	protected:
 		std::string		type;
-	
+
 	public:
 		Animal( void );
 		Animal( std::string type );
 		Animal ( Animal const & copy );
 		Animal&	operator = ( Animal const & copy );
-		~Animal( void );
+		virtual ~Animal( void );
 
 		std::string	getType( void ) const;
 		void		setType( std::string type );

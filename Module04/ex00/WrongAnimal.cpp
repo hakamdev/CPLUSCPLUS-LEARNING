@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 18:31:33 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/15 18:35:35 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/08 02:32:59 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ WrongAnimal::~WrongAnimal( void ) {
 }
 
 std::string	WrongAnimal::getType( void ) const {
-	// std::cout << "WrongAnimal: getType called!" << std::endl;
 	return type;
 }
 

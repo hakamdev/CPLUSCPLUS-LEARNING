@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:33:59 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/20 23:25:03 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/08 22:09:25 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Form {
 		int const			_execGrade;
 		bool				_isSigned;
 	public:
+		Form( void );
 		Form( std::string name, int signGrade, int execGrade );
 		Form( Form const & copy );
 		Form& operator = ( Form const & copy );

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 05:38:20 by ehakam            #+#    #+#             */
-/*   Updated: 2022/01/15 18:10:41 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/08 02:33:08 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ Animal::~Animal( void ) {
 }
 
 std::string	Animal::getType( void ) const {
-	// std::cout << "Animal: getType called!" << std::endl;
 	return type;
 }
 

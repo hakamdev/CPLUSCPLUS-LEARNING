@@ -6,7 +6,7 @@
 #    By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/07 05:29:40 by ehakam            #+#    #+#              #
-#    Updated: 2022/02/15 18:10:07 by ehakam           ###   ########.fr        #
+#    Updated: 2022/04/08 02:33:43 by ehakam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,3 +27,5 @@ fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
