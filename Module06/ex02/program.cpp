@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   program.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 21:21:52 by ehakam            #+#    #+#             */
-/*   Updated: 2022/03/11 22:58:41 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/09 02:48:24 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,19 @@ Base	*generate(void) {
 void	identify(Base* p) {
 	std::cout << "Identify Class using Pointer:" << std::endl;
 	A* ptrA = dynamic_cast<A*>(p);
-	if (ptrA != nullptr) {
+	if (ptrA != NULL) {
 		std::cout << "Class Type: A" << std::endl;
 		return ;
 	}
 	
 	B* ptrB = dynamic_cast<B*>(p);
-	if (ptrB != nullptr) {
+	if (ptrB != NULL) {
 		std::cout << "Class Type: B" << std::endl;
 		return ;
 	}
 
 	C* ptrC = dynamic_cast<C*>(p);
-	if (ptrC != nullptr) {
+	if (ptrC != NULL) {
 		std::cout << "Class Type: C" << std::endl;
 		return ;
 	}

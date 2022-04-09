@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:25:55 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/21 02:10:44 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/09 00:28:53 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
 
 int	main( void ) {
 	Intern someRandomIntern;
-	Form* rrf;
-	Form* notRRF;
-	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-	notRRF = someRandomIntern.makeForm("Weird Form", "Nobody");
+	Form* robotomyForm;
+	Form* weirdForm;
+	robotomyForm = someRandomIntern.makeForm("robotomy request", "Bender");
+	weirdForm = someRandomIntern.makeForm("Weird Form", "Nobody");
 
-	delete rrf;
-	delete notRRF;
-	
+	delete robotomyForm;
+	delete weirdForm;
+
 	return (0);
 }

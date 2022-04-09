@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 00:54:49 by ehakam            #+#    #+#             */
-/*   Updated: 2022/03/14 03:47:32 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/09 03:59:17 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class Array {
 		
 		T& operator [] ( uint32_t n ) {
 			if (n < 0 || n >= _n) {
-				throw std::exception();
+				throw std::out_of_range();
 			}
 			return _array[n];
 		}

@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:25:55 by ehakam            #+#    #+#             */
-/*   Updated: 2022/02/21 00:32:03 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/09 00:27:33 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int	main( void ) {
 	b1.executeForm(f2);
 	b1.executeForm(f3);
 	b1.executeForm(f4);
+
+	std::cout << std::endl;
 
 	b3.executeForm(f1);
 	b3.executeForm(f2);
