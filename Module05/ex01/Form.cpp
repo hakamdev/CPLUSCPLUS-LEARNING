@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:33:56 by ehakam            #+#    #+#             */
-/*   Updated: 2022/04/08 22:44:57 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/09 00:11:30 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ Form::Form( std::string name, int signGrade, int execGrade ) :
 					_name(name), _signGrade(signGrade), _execGrade(execGrade), _isSigned(false) {
 	std::cout << "Form:  Constructor called!" << std::endl;
 	if (signGrade > 150 || execGrade > 150)
-		throw Form::GradeTooLowException(this->_name);
+		throw Form::GradeTooLowException();
 	else if (signGrade < 1 || execGrade < 1)
-		throw Form::GradeTooHighException(this->_name);
+		throw Form::GradeTooHighException();
 }
 
 Form::Form( Form const & copy ) :
@@ -58,13 +58,13 @@ bool	Form::isSigned( void ) const {
 
 void	Form::beSigned(Bureaucrat const & b) {
 	if (this->_isSigned) {
-		std::cout << this->_name << " Form has already signed!" << std::endl;
+		std::cout << this->_name << " Form has already been signed!" << std::endl;
 		return ;
 	}
 	if (b.getGrade() > this->_signGrade)
-		throw Form::GradeTooLowException(this->_name);
+		throw Form::GradeTooLowException();
 	else if (b.getGrade() <= this->_signGrade)
-	this->_isSigned = true;
+		this->_isSigned = true;
 }
 
 std::ostream&	operator << (std::ostream &os, const Form &f)
@@ -78,29 +78,11 @@ std::ostream&	operator << (std::ostream &os, const Form &f)
 }
 
 // EXCEPTIONS
-Form::GradeTooHighException::GradeTooHighException( void ) {}
 Form::GradeTooHighException::~GradeTooHighException( void ) throw() {}
-Form::GradeTooLowException::GradeTooLowException( void ) {}
 Form::GradeTooLowException::~GradeTooLowException( void ) throw() {}
-Form::GradeTooHighException::GradeTooHighException( std::string name )
-	: _thower_name(name) {}
-Form::GradeTooLowException::GradeTooLowException( std::string name )
-	: _thower_name(name) {}
-
 const char*	Form::GradeTooHighException::what () const throw () {
-	std::string message = std::string("GradeTooHighException:\n") + _thower_name + ": grade too high!";
-	return (message.c_str());
+	return "GradeTooHighException: grade is higher than 1";
 }
 const char*	Form::GradeTooLowException::what () const throw () {
-	std::string message = std::string("GradeTooLowException:\n")  + _thower_name + ": grade too low!";
-	return (message.c_str());
-}
-
-std::ostream&	operator << (std::ostream &os, const Form::GradeTooLowException &e) {
-	os << e.what();
-    return os;
-}
-std::ostream&	operator << (std::ostream &os, const Form::GradeTooHighException &e) {
-	os << e.what();
-    return os;
+	return "GradeTooLowException: grade is lower than required";
 }

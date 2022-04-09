@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:25:52 by ehakam            #+#    #+#             */
-/*   Updated: 2022/04/08 23:35:23 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/09 00:07:38 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,5 @@ const char*	Bureaucrat::GradeTooHighException::what () const throw () {
 	return ("GradeTooHighException: grade is higher than 1");
 }
 const char*	Bureaucrat::GradeTooLowException::what () const throw () {
-	return ("GradeTooHighException: grade is lower than 150");
+	return ("GradeTooLowException: grade is lower than 150");
 }

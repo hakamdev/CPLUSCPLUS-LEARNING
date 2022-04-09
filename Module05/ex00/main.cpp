@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:25:55 by ehakam            #+#    #+#             */
-/*   Updated: 2022/04/08 23:36:29 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/08 23:42:57 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ int	main( void ) {
 	Bureaucrat b2(b1);
 	Bureaucrat b3("John Snow", 150);
 	Bureaucrat b4("Lady Brian", 150);
-	std::cout << "(before decrement) " << b2 << std::endl;
+	std::cout << std::endl;
+	std::cout << "(before decrement) " << b2;
 	b2.decrement();
-	std::cout << "(after decrement) " << b2  << std::endl;
-	std::cout << "(before increment) " << b4  << std::endl;
+	std::cout << "(after decrement) " << b2;
+	std::cout << "(before increment) " << b4;
 	b4.increment();
-	std::cout << "(after increment) " << b4  << std::endl;
+	std::cout << "(after increment) " << b4;
 
 	// Operations that throw exception //
 	std::cout << std::endl << "*** THESE SHOULD THROW AN EXCEPTION ***" << std::endl;

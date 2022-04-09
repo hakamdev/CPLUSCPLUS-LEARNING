@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:33:56 by ehakam            #+#    #+#             */
-/*   Updated: 2022/04/08 22:44:45 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/09 00:12:08 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,11 @@ Form::GradeTooLowException::~GradeTooLowException( void ) throw() {}
 Form::FormNotSignedException::~FormNotSignedException( void ) throw() {}
 
 const char*	Form::GradeTooHighException::what () const throw () {
-	return ("GradeTooHighException: grade is higher than 1");
+	return "GradeTooHighException: grade is higher than 1";
 }
 const char*	Form::GradeTooLowException::what () const throw () {
-	return ("GradeTooLowException: grade is lower than 150");
+	return "GradeTooLowException: grade is lower than required";
 }
 const char*	Form::FormNotSignedException::what () const throw () {
-	return ("FormNotSignedException: form is not signed");
+	return "FormNotSignedException: form is not signed";
 }

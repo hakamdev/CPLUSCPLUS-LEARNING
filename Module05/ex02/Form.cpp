@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:33:56 by ehakam            #+#    #+#             */
-/*   Updated: 2022/04/08 22:37:49 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/09 00:11:47 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,31 +26,39 @@ Form::Form( std::string name, int signGrade, int execGrade ) :
 	else if (signGrade < 1 || execGrade < 1)
 		throw Form::GradeTooHighException();
 }
+
 Form::Form( Form const & copy ) :
 					_name(copy._name), _signGrade(copy._signGrade), _execGrade(copy._execGrade) {
 	std::cout << "Form: Copy Constructor called!" << std::endl;
 	*this = copy;
 }
+
 Form& Form::operator = ( Form const & copy ) {
 	std::cout << "Form: = operator called!" << std::endl;
 	this->_isSigned = copy._isSigned;
 	return (*this);
 }
+
 Form::~Form( void ) {
 	std::cout << "Form: Destructor called!" << std::endl;
 }
+
 std::string	Form::getName( void ) const {
 	return (this->_name);
 }
+
 int		Form::getSignGrade( void ) const {
 	return (this->_signGrade);
 }
+
 int		Form::getExecGrade( void ) const {
 	return (this->_execGrade);
 }
+
 bool	Form::isSigned( void ) const {
 	return (this->_isSigned);
 }
+
 void	Form::beSigned(Bureaucrat const & b) {
 	if (this->_isSigned) {
 		std::cout << this->_name << " Form has already been signed!" << std::endl;
@@ -61,6 +69,7 @@ void	Form::beSigned(Bureaucrat const & b) {
 	else if (b.getGrade() <= this->_signGrade)
 	this->_isSigned = true;
 }
+
 void	Form::execute(Bureaucrat const & executor) const {
 	if (!this->_isSigned)
 		throw FormNotSignedException();
@@ -68,7 +77,7 @@ void	Form::execute(Bureaucrat const & executor) const {
 		throw GradeTooLowException();
 }
 
-std::ostream&	operator << (std::ostream &os, const Form &f)
+std::ostream& operator << (std::ostream &os, const Form &f)
 {
 	os << "FORM:		" << f.getName() << std::endl;
 	os << "SIGN GRADE:	" << f.getSignGrade() << std::endl;
@@ -87,7 +96,7 @@ const char*	Form::GradeTooHighException::what () const throw () {
 	return "GradeTooHighException: grade is higher than 1";
 }
 const char*	Form::GradeTooLowException::what () const throw () {
-	return "GradeTooLowException: grade is lower than 150";
+	return "GradeTooLowException: grade is lower than required";
 }
 const char*	Form::FormNotSignedException::what () const throw () {
 	return "FormNotSignedException: form is not signed";

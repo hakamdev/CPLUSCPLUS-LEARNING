@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:33:59 by ehakam            #+#    #+#             */
-/*   Updated: 2022/04/08 22:09:25 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/08 23:53:14 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,17 @@ class Form {
 		void		beSigned(Bureaucrat const & b);
 
 	class GradeTooHighException : public std::exception {
-		private:
-			std::string _thower_name;
 		public:
-			GradeTooHighException( void );
-			GradeTooHighException( std::string name );
 			~GradeTooHighException( void ) throw();
 			const char* what() const throw ();
 	};
 	class GradeTooLowException : public std::exception {
-		private:
-			std::string _thower_name;
 		public:
-			GradeTooLowException( void );
 			~GradeTooLowException( void ) throw();
-			GradeTooLowException( std::string name );
 			const char* what() const throw ();
 	};
 };
 
 std::ostream&	operator << (std::ostream &os, const Form &f);
-std::ostream&	operator << (std::ostream &os, const Form::GradeTooLowException &e);
-std::ostream&	operator << (std::ostream &os, const Form::GradeTooHighException &e);
 
 #endif /* __FORM_HPP__ */
