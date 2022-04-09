@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 03:27:58 by ehakam            #+#    #+#             */
-/*   Updated: 2022/03/10 03:57:57 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/09 21:20:22 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(void) {
 
     ptr = serialize(&d);
     Data *d2 = deserialize(ptr);
-    
+
     std::cout << "Data2: " << d2 << std::endl;
     std::cout << "       name - " << d2->name << std::endl;
     std::cout << "       age  - " << d2->age << std::endl;
