@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 00:54:49 by ehakam            #+#    #+#             */
-/*   Updated: 2022/04/09 03:59:17 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/11 02:34:35 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class Array {
 		
 		T& operator [] ( uint32_t n ) {
 			if (n < 0 || n >= _n) {
-				throw std::out_of_range();
+				throw std::out_of_range("OutOfRangeException: Index is out of range!");
 			}
 			return _array[n];
 		}
