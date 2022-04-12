@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 23:06:30 by ehakam            #+#    #+#             */
-/*   Updated: 2022/03/12 02:01:50 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/11 21:34:52 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,6 @@ std::string to_string(int i) {
 
 int main() {
 	
-	std::cout << "Creating an empty int array:" << std::endl;
-	Array <int> a;
-	std::cout << a << std::endl;
-	
 	std::cout << "Creating an int array with 10 elements:" << std::endl;
 	Array <int> b(10);
 
@@ -35,11 +31,6 @@ int main() {
 	}
 	std::cout << b << std::endl;
 
-	// Testing with std::string
-	std::cout << "Creating an empty string array:" << std::endl;
-	Array <std::string> sa;
-	std::cout << sa << std::endl;
-	
 	std::cout << "Creating a string array with 5 elements:" << std::endl;
 	Array <std::string> sb(5);
 

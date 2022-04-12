@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehakam <ehakam@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 02:20:32 by ehakam            #+#    #+#             */
-/*   Updated: 2022/03/25 03:37:31 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/12 01:26:08 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ Span::~Span() {
 Span& Span::operator = ( Span const & copy ) {
 	std::cout << "Span: = operator called" << std::endl;
 	this->N = copy.N;
+	this->array = copy.array;
 	return *this;
 }
 
@@ -49,7 +50,7 @@ void Span::addNumbers(std::vector<int>::iterator first, std::vector<int>::iterat
 
 int Span::shortestSpan( void ) {
 	int span;
-	if (array.empty() || array.size() == 1) 
+	if (array.empty() || array.size() == 1)
 		throw std::exception();
 	std::sort(array.begin(), array.end());
 	span = array[1] - array[0];
@@ -66,4 +67,3 @@ int Span::longestSpan( void ) {
 	std::sort(array.begin(), array.end());
 	return array.back() - array.front();
 }
-
