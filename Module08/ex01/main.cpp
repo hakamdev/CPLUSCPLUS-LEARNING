@@ -6,7 +6,7 @@
 /*   By: ehakam <ehakam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 02:20:28 by ehakam            #+#    #+#             */
-/*   Updated: 2022/04/12 01:36:27 by ehakam           ###   ########.fr       */
+/*   Updated: 2022/04/12 01:40:08 by ehakam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main( void ) {
 	} catch (std::exception& e) {
 		std::cerr << "Error: not enough numbers" << std::endl;
 	}
-	
+
 	// Their test
 	Span sp = Span(5);
 	sp.addNumber(6);
@@ -47,9 +47,7 @@ int main( void ) {
 	Span big_s(10000);
 
 	for (size_t i = 0; i < 10000; i++)
-	{
 		big_s.addNumber(i);
-	}
 
 	std::cout << big_s.shortestSpan() << std::endl;
 	std::cout << big_s.longestSpan() << std::endl;
